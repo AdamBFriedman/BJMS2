@@ -1,6 +1,9 @@
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Home from "./Pages/Home";
+import Meet from "./Pages/Meet";
+import Services from "./Pages/Services";
+import Contact from "./Pages/Contact";
 import { AppBar, Toolbar, CssBaseline } from "@material-ui/core";
 import "./App.css";
 
@@ -40,13 +43,13 @@ function App() {
             <Home />
           </Route>
           <Route path="/meet">
-            <h1>Meet Joey</h1>
+            <Meet />
           </Route>
           <Route path="/services">
-            <h1>Services</h1>
+            <Services />
           </Route>
           <Route path="/contact">
-            <h1>Contact</h1>
+            <Contact />
           </Route>
         </Switch>
       </div>
