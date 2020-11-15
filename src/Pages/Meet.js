@@ -1,7 +1,7 @@
 function Meet(props) {
   return (
     <>
-      <h1>Meet</h1>
+      <h1>Meet Joey</h1>
     </>
   );
 }
