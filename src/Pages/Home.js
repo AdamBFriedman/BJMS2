@@ -2,7 +2,9 @@ import $ from "jquery";
 import { useState } from "react";
 // import { makeStyles } from "@material-ui/core/styles";
 import { Paper, Button } from "@material-ui/core";
-import splitFace from "../img/splitface.jpg";
+import splitFace from "../img/splitface.png";
+import joker from "../img/joker.jpg";
+import scary from "../img/scary.jpg";
 
 // const useStyles = makeStyles({
 //   rightButtons: {
@@ -26,14 +28,20 @@ const styles = {
     left: 0,
     width: "50%",
     height: "100%",
-    background: "green",
+    backgroundImage: `url(${joker})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    transition: "1s",
   },
   rightSide: {
     position: "absolute",
     right: 0,
     width: "50%",
     height: "100%",
-    background: "red",
+    backgroundImage: `url(${scary})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    transition: "1s",
   },
 };
 
@@ -46,9 +54,9 @@ function Home(props) {
     var leftSide = $(this).width() / 2;
     var cursorPosition = e.pageX < leftSide ? "cursorL" : "cursorR";
     if (cursorPosition === "cursorL") {
-      setCursor("left");
-    } else {
       setCursor("right");
+    } else {
+      setCursor("left");
     }
   });
 
