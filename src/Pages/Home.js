@@ -38,8 +38,9 @@ const useStyles = makeStyles({
 		flexDirection: 'column',
 		justifyContent: 'center',
 		alignItems: 'center',
-		margin: theme.spacing(4),
-		width: '30vw'
+		margin: theme.spacing(0, 4),
+		width: '30vw',
+		height: '90vh'
 	},
 	animated_H1: {
 		fontFamily: "'PT Serif', sans-serif",
