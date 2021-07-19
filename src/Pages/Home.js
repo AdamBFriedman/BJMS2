@@ -1,5 +1,7 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, createTheme } from '@material-ui/core/styles';
+
+const theme = createTheme();
 
 const useStyles = makeStyles({
 	"@keyframes jump": {
@@ -19,9 +21,25 @@ const useStyles = makeStyles({
 			transform: "translateY(0px) rotate(360deg)"
 		}
 	},
+	"@keyframes puff": {
+"0%": {
+			WebkitTransform: "rotate(-540deg) scale(0)",
+					transform: "rotate(-540deg) scale(0)",
+			opacity: 0,
+		  },
+		  "100%:": {
+			WebkitTransform: "rotate(0) scale(1)",
+					transform: "rotate(0) scale(1)",
+			opacity: 1,
+		  }
+	  },
 	move: {
-		position: "absolute",
-		transform: "translate(0,100px)"
+		display: 'flex',
+		flexDirection: 'column',
+		justifyContent: 'center',
+		alignItems: 'center',
+		margin: theme.spacing(4),
+		width: '30vw'
 	},
 	animated_H1: {
 		fontFamily: "'PT Serif', sans-serif",
@@ -29,17 +47,13 @@ const useStyles = makeStyles({
 		textShadow: "0 5px 15px rgba(0,0,0,.3)",
 		textTransform: "uppercase",
 		lineHeight: "3.5",
-		marginRight: "125px",
-		marginLeft: "10px",
-		position: "relative",
-		transform: "translate(120px, 270px)"
+		letterSpacing: theme.spacing(2)
 	},
 	animated_H1_span: {
 		position: "relative",
 	display: "inline-block",
 	background: "linear-gradient(to left,#fceabb,#f8b500)",
 	backgroundRepeat: "no-repeat",
-	animation: "nav 2.25s linear",
 	WebkitBackgroundClip: "text",
 	WebkitTextFillColor: "rgba(255,255,255,.01)",
 	"&:nth-child(1)": {
@@ -92,7 +106,18 @@ const useStyles = makeStyles({
 	},
 	"&:nth-child(17)": {
 		animation: "$jump 3s 1.6s",
+	}
 	},
+	animated_H2: {
+		fontFamily: "'Playfair Display', sans-serif",
+		fontSize: "1.6rem",
+		textTransform: "uppercase",
+		letterSpacing: 1,
+		background: "linear-gradient(to left,#bdc3c7, #f8b500, #2c3e50)",
+		backgroundRepeat: "no-repeat",
+		animation: "$puff 2.25s linear",
+		WebkitBackgroundClip: "text",
+		WebkitTextFillColor: "rgba(255,255,255,.01)",
 	}
 });
 
@@ -122,7 +147,7 @@ export const Home = () => {
         <span className={classes.animated_H1_span}>Y</span>
     </h1>
 
-    <h2 class="h2main">Family Entertainment Specialist</h2>
+    <h2 className={classes.animated_H2}>Family Entertainment Specialist</h2>
   </div>
 	</>;
 };
