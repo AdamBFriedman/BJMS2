@@ -21,7 +21,7 @@ const useStyles = makeStyles({
 			transform: "translateY(0px) rotate(360deg)"
 		}
 	},
-	"@keyframes puff": {
+	"@keyframes swirl-in": {
 "0%": {
 			WebkitTransform: "rotate(-540deg) scale(0)",
 					transform: "rotate(-540deg) scale(0)",
@@ -115,7 +115,7 @@ const useStyles = makeStyles({
 		letterSpacing: 1,
 		background: "linear-gradient(to left,#bdc3c7, #f8b500, #2c3e50)",
 		backgroundRepeat: "no-repeat",
-		animation: "$puff 2.25s linear",
+		animation: "$swirl-in 2s 1s ease-out both",
 		WebkitBackgroundClip: "text",
 		WebkitTextFillColor: "rgba(255,255,255,.01)",
 	}
