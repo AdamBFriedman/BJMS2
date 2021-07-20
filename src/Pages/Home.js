@@ -47,9 +47,11 @@ const useStyles = makeStyles({
 			backgroundPosition: 'center',
 		},
 	},
-	move: {
+	centerContent: {
 		display: 'flex',
 		flexDirection: 'column',
+		justifyContent: "center",
+		height: '100vh',
 		margin: theme.spacing(0, 4),
 	},
 	animated_H1: {
@@ -135,6 +137,7 @@ const useStyles = makeStyles({
 		flexDirection: 'column',
 		listStyleType: 'none',
 		margin: 0,
+		padding: 0
 	},
 	listItem: {
 		width: '60px',
@@ -151,22 +154,11 @@ const useStyles = makeStyles({
 		},
 	},
 	icon: {
-				color: '#fff',
+		color: '#fff',
 		position: 'absolute',
 		top: '50%',
 		left: '50%',
 		transform: 'translate(-50%, -50%)',
-	},
-	socialMedia: {
-		// transform: "translateY(50vh)",
-		[theme.breakpoints.down('sm')]: {
-			transform: 'none',
-		},
-		// display: "flex",
-		// justifyContent: "center",
-		// alignItems: "center",
-		// margin: 0,
-		// padding: 0
 	},
 	facebook: {
 		background: '#4267b2',
@@ -196,7 +188,8 @@ export const Home = () => {
 
 	return (
 		<div className={classes.homeWrapper}>
-			<div className={classes.socialMedia}>
+			
+			<div className={classes.centerContent}>
 				<ul className={classes.list}>
 					<li className={`${classes.listItem} ${classes.facebook}`}>
 						<a href="https://www.facebook.com/joeydp8trow/" target="_blank" rel="noreferrer">
@@ -227,8 +220,6 @@ export const Home = () => {
 						</a>
 					</li>
 				</ul>
-			</div>
-			<div className={classes.move}>
 				<h1 className={classes.animated_H1}>
 					<span className={classes.animated_H1_span}>B</span>
 					<span className={classes.animated_H1_span}>I</span>
