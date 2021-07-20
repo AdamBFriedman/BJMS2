@@ -2,8 +2,7 @@ import React from 'react';
 import { makeStyles, createTheme } from '@material-ui/core/styles';
 import 'font-awesome/css/font-awesome.min.css';
 import { FaFacebook, FaYoutube, FaTwitter, FaInstagram } from 'react-icons/fa';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import suit from '../img/suit.jpg'
 
 const theme = createTheme();
 
@@ -37,14 +36,32 @@ const useStyles = makeStyles({
 			opacity: 1,
 		  }
 	  },
+	  homeWrapper: {
+		fontFamily: "sans-serif",
+		textAlign: "center",
+		backgroundImage: `url(${suit})`,
+		backgroundRepeat: "no-repeat",
+		backgroundSize: "cover",
+		height: '100vh !important',
+		// position: 'absolute',
+		// top: 0,
+		// right: 0,
+		// bottom: 0,
+		// left: 0,
+		[theme.breakpoints.down('sm')]: {
+			backgroundPosition: "center",
+
+			// backgroundSize: "contain",
+		}
+	},
 	move: {
 		display: 'flex',
 		flexDirection: 'column',
-		justifyContent: 'center',
-		alignItems: 'center',
+		// justifyContent: 'center',
+		// alignItems: 'center',
 		margin: theme.spacing(0, 4),
-		width: '30vw',
-		height: '90vh'
+		// width: '30vw',
+		// height: '90vh'
 	},
 	animated_H1: {
 		fontFamily: "'PT Serif', sans-serif",
@@ -128,6 +145,7 @@ const useStyles = makeStyles({
 		display: "flex",
 		flexDirection: "column",
 		listStyleType: "none",
+		margin: 0,
 	},
 	listItem: {
 		width: "60px",
@@ -151,7 +169,15 @@ const useStyles = makeStyles({
    transform: "translate(-50%, -50%)"
 	},
 	socialMedia: {
-		marginLeft: "10px"
+		// transform: "translateY(50vh)",
+		[theme.breakpoints.down('sm')]: {
+			transform: "none",
+		}
+		// display: "flex",
+		// justifyContent: "center",
+		// alignItems: "center",
+		// margin: 0,
+		// padding: 0
 	},
 	facebook: {
 		background: "#4267b2",
@@ -178,7 +204,15 @@ const useStyles = makeStyles({
 export const Home = () => {
 	const classes = useStyles();
 
-	return <>
+	return <div className={classes.homeWrapper}>
+		<div className={classes.socialMedia}>
+  <ul className={classes.list}>
+  <li className={`${classes.listItem} ${classes.facebook}`}><a href="https://www.facebook.com/joeydp8trow/" target="_blank" rel="noreferrer"><FaFacebook className={classes.icon} /> </a></li>
+      <li className={`${classes.listItem} ${classes.youtube}`}><a href="https://www.youtube.com/channel/UC4ePL-afZ7oPyiW075k0AJA" target="_blank" rel="noreferrer"><FaYoutube className={classes.icon} /> </a></li>
+      <li className={`${classes.listItem} ${classes.linkedin}`}><a href="https://www.linkedin.com/in/joseph-dipietro-aa398b171/" target="_blank" rel="noreferrer"><FaTwitter className={classes.icon} /></a></li>
+      <li className={`${classes.listItem} ${classes.instagram}`}><a href="https://www.instagram.com/bigjoeymagicshowy/" target="_blank" rel="noreferrer"><FaInstagram className={classes.icon} /> </a></li>
+  </ul>
+</div>
 	<div className={classes.move}>
     
     <h1 className={classes.animated_H1}>
@@ -204,15 +238,8 @@ export const Home = () => {
     <h2 className={classes.animated_H2}>Family Entertainment Specialist</h2>
   </div>
 
-  <div className={classes.socialMedia}>
-  <ul className={classes.list}>
-  <li className={`${classes.listItem} ${classes.facebook}`}><a href="https://www.facebook.com/joeydp8trow/" target="_blank" rel="noreferrer"><FaFacebook className={classes.icon} /> </a></li>
-      <li className={`${classes.listItem} ${classes.youtube}`}><a href="https://www.youtube.com/channel/UC4ePL-afZ7oPyiW075k0AJA" target="_blank" rel="noreferrer"><FaYoutube className={classes.icon} /> </a></li>
-      <li className={`${classes.listItem} ${classes.linkedin}`}><a href="https://www.linkedin.com/in/joseph-dipietro-aa398b171/" target="_blank" rel="noreferrer"><FaTwitter className={classes.icon} /></a></li>
-      <li className={`${classes.listItem} ${classes.instagram}`}><a href="https://www.instagram.com/bigjoeymagicshowy/" target="_blank" rel="noreferrer"><FaInstagram className={classes.icon} /> </a></li>
-  </ul>
-</div>
-	</>;
+  
+	</div>;
 };
 
 export default Home;

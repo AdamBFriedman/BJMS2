@@ -37,7 +37,7 @@ function App() {
 		<Router>
 			<div>
 				<CssBaseline />
-				<AppBar position="sticky" className={classes.appbar}>
+				<AppBar className={classes.appbar}>
 					<Toolbar>
 						<Link className={classes.link} to="/">
 							Home
