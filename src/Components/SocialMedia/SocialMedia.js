@@ -6,6 +6,7 @@ const theme = createTheme();
 
 const useStyles = makeStyles({
 	list: {
+		height: '100%',
 		display: 'flex',
 		flexDirection: 'column',
 		justifyContent: 'center',
@@ -13,10 +14,14 @@ const useStyles = makeStyles({
 		listStyleType: 'none',
 		margin: theme.spacing(0, 3),
 		padding: 0,
-		transform: 'translateY(50%)',
+		// transform: 'translateY(50%)',
+		// [theme.breakpoints.up('xl')]: {
+		// 	transform: 'translateY(100%)',
+		// },
 		[theme.breakpoints.down('xs')]: {
 			transform: 'translateY(0)',
 			alignItems: 'center',
+			height: 'auto',
 		},
 	},
 	listItem: {
@@ -32,6 +37,12 @@ const useStyles = makeStyles({
 		'&:hover': {
 			transform: 'translateX(20px)',
 			transition: '.3s',
+		},
+		[theme.breakpoints.up('xl')]: {
+			width: '100px',
+		height: '100px',
+		lineHeight: '100px',
+		fontSize: '60px'
 		},
 		[theme.breakpoints.down('xs')]: {
 			margin: theme.spacing(2, 0),
