@@ -57,6 +57,9 @@ const useStyles = makeStyles({
 		height: '100vh',
 		width: '80%',
 		margin: theme.spacing(0, 'auto'),
+		[theme.breakpoints.down('sm')]: {
+			width: '100vw'
+		},
 	},
 	animated_H1: {
 		fontFamily: "'PT Serif', sans-serif",
@@ -66,7 +69,7 @@ const useStyles = makeStyles({
 		lineHeight: '3.5',
 		letterSpacing: theme.spacing(2),
 		[theme.breakpoints.down('sm')]: {
-            fontSize: '2em'
+			fontSize: '2em',
 		},
 	},
 	animated_H1_span: {
@@ -78,33 +81,63 @@ const useStyles = makeStyles({
 		WebkitTextFillColor: 'rgba(255,255,255,.01)',
 		'&:nth-child(1)': {
 			animation: '$jump 3s',
+			[theme.breakpoints.down('sm')]: {
+				letterSpacing: theme.spacing(1.5),
+			},
 		},
 		'&:nth-child(2)': {
 			animation: '$jump 3s .1s',
+			[theme.breakpoints.down('sm')]: {
+				letterSpacing: theme.spacing(1.5),
+			},
 		},
 		'&:nth-child(3)': {
 			animation: '$jump 3s .2s',
+			[theme.breakpoints.down('sm')]: {
+				letterSpacing: theme.spacing(1.5),
+			},
 		},
 		'&:nth-child(4)': {
 			animation: '$jump 3s .3s',
+			[theme.breakpoints.down('sm')]: {
+				letterSpacing: theme.spacing(1.5),
+			},
 		},
 		'&:nth-child(5)': {
 			animation: '$jump 3s .4s',
+			[theme.breakpoints.down('sm')]: {
+				letterSpacing: theme.spacing(1.5),
+			},
 		},
 		'&:nth-child(6)': {
 			animation: '$jump 3s .5s',
+			[theme.breakpoints.down('sm')]: {
+				letterSpacing: theme.spacing(1.5),
+			},
 		},
 		'&:nth-child(7)': {
 			animation: '$jump 3s .6s',
+			[theme.breakpoints.down('sm')]: {
+				letterSpacing: theme.spacing(1.5),
+			},
 		},
 		'&:nth-child(8)': {
 			animation: '$jump 3s .7s',
+			[theme.breakpoints.down('sm')]: {
+				letterSpacing: theme.spacing(1.5),
+			},
 		},
 		'&:nth-child(9)': {
 			animation: '$jump 3s .8s',
+			[theme.breakpoints.down('sm')]: {
+				letterSpacing: theme.spacing(1.5),
+			},
 		},
 		'&:nth-child(10)': {
 			animation: '$jump 3s .9s',
+			[theme.breakpoints.down('sm')]: {
+				letterSpacing: theme.spacing(1.5),
+			},
 		},
 		'&:nth-child(11)': {
 			animation: '$jump 3s 1s',
@@ -138,6 +171,9 @@ const useStyles = makeStyles({
 		animation: '$swirl-in 2s 1s ease-out both',
 		WebkitBackgroundClip: 'text',
 		WebkitTextFillColor: 'rgba(255,255,255,.01)',
+		[theme.breakpoints.down('sm')]: {
+			fontSize: '1.4em',
+		},
 	},
 	list: {
 		display: 'flex',
@@ -192,68 +228,62 @@ const useStyles = makeStyles({
 
 export const Home = () => {
 	const classes = useStyles();
-	const isDesktopOrLarger = useMediaQuery(theme.breakpoints.up('lg'))
+	const isDesktopOrLarger = useMediaQuery(theme.breakpoints.up('lg'));
+	const isMobileOrSmaller = useMediaQuery(theme.breakpoints.down('xs'));
 
 	return (
 		<div className={classes.homeWrapper}>
-						{isDesktopOrLarger	? <SwingingFrame /> : null}
+			{isDesktopOrLarger ? <SwingingFrame /> : null}
 			<div className={classes.centerContent}>
-				{/* <div style={{display: 'flex', justifyContent: 'flex-end !important', alignItems: 'flex-end !important'}}> */}
-				{/* <SwingingFrame /> */}
-				{/* </div> */}
-				{/* <ul className={classes.list}>
-					<li className={`${classes.listItem} ${classes.facebook}`}>
-						<a href="https://www.facebook.com/joeydp8trow/" target="_blank" rel="noreferrer">
-							<FaFacebook className={classes.icon} />{' '}
-						</a>
-					</li>
-					<li className={`${classes.listItem} ${classes.youtube}`}>
-						<a
-							href="https://www.youtube.com/channel/UC4ePL-afZ7oPyiW075k0AJA"
-							target="_blank"
-							rel="noreferrer"
-						>
-							<FaYoutube className={classes.icon} />{' '}
-						</a>
-					</li>
-					<li className={`${classes.listItem} ${classes.linkedin}`}>
-						<a
-							href="https://www.linkedin.com/in/joseph-dipietro-aa398b171/"
-							target="_blank"
-							rel="noreferrer"
-						>
-							<FaTwitter className={classes.icon} />
-						</a>
-					</li>
-					<li className={`${classes.listItem} ${classes.instagram}`}>
-						<a href="https://www.instagram.com/bigjoeymagicshowy/" target="_blank" rel="noreferrer">
-							<FaInstagram className={classes.icon} />{' '}
-						</a>
-					</li>
-				</ul> */}
-				<h1 className={classes.animated_H1}>
-					<span className={classes.animated_H1_span}>B</span>
-					<span className={classes.animated_H1_span}>I</span>
-					<span className={classes.animated_H1_span}>G</span>
-					<span className={classes.animated_H1_span}>J</span>
-					<span className={classes.animated_H1_span}>O</span>
-					<span className={classes.animated_H1_span}>E</span>
-					<span className={classes.animated_H1_span}>Y</span>
-					<span className={classes.animated_H1_span}>M</span>
-					<span className={classes.animated_H1_span}>A</span>
-					<span className={classes.animated_H1_span}>G</span>
-					<span className={classes.animated_H1_span}>I</span>
-					<span className={classes.animated_H1_span}>C</span>
-					<span className={classes.animated_H1_span}>S</span>
-					<span className={classes.animated_H1_span}>H</span>
-					<span className={classes.animated_H1_span}>O</span>
-					<span className={classes.animated_H1_span}>W</span>
-					<span className={classes.animated_H1_span}>Y</span>
-				</h1>
+				{isMobileOrSmaller ? (
+					<>
+						<h1 className={classes.animated_H1}>
+							<span className={classes.animated_H1_span}>B</span>
+							<span className={classes.animated_H1_span}>I</span>
+							<span className={classes.animated_H1_span}>G</span>
+							<span className={classes.animated_H1_span}>J</span>
+							<span className={classes.animated_H1_span}>O</span>
+							<span className={classes.animated_H1_span}>E</span>
+							<span className={classes.animated_H1_span}>Y</span>
+						</h1>
+						<h2 classname={classes.animated_H1}>
+							<span className={classes.animated_H1_span}>M</span>
+							<span className={classes.animated_H1_span}>A</span>
+							<span className={classes.animated_H1_span}>G</span>
+							<span className={classes.animated_H1_span}>I</span>
+							<span className={classes.animated_H1_span}>C</span>
+							<span className={classes.animated_H1_span}>S</span>
+							<span className={classes.animated_H1_span}>H</span>
+							<span className={classes.animated_H1_span}>O</span>
+							<span className={classes.animated_H1_span}>W</span>
+							<span className={classes.animated_H1_span}>Y</span>
+						</h2>
+					</>
+				) : (
+					<h1 className={classes.animated_H1}>
+						<span className={classes.animated_H1_span}>B</span>
+						<span className={classes.animated_H1_span}>I</span>
+						<span className={classes.animated_H1_span}>G</span>
+						<span className={classes.animated_H1_span}>J</span>
+						<span className={classes.animated_H1_span}>O</span>
+						<span className={classes.animated_H1_span}>E</span>
+						<span className={classes.animated_H1_span}>Y</span>
+						<span className={classes.animated_H1_span}>M</span>
+						<span className={classes.animated_H1_span}>A</span>
+						<span className={classes.animated_H1_span}>G</span>
+						<span className={classes.animated_H1_span}>I</span>
+						<span className={classes.animated_H1_span}>C</span>
+						<span className={classes.animated_H1_span}>S</span>
+						<span className={classes.animated_H1_span}>H</span>
+						<span className={classes.animated_H1_span}>O</span>
+						<span className={classes.animated_H1_span}>W</span>
+						<span className={classes.animated_H1_span}>Y</span>
+					</h1>
+				)}
 
 				<h2 className={classes.animated_H2}>Family Entertainment Specialist</h2>
 
-				{isDesktopOrLarger	? null : <SwingingFrame /> }
+				{isDesktopOrLarger ? null : <SwingingFrame />}
 			</div>
 		</div>
 	);
