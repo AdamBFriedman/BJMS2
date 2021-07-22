@@ -1,8 +1,7 @@
 import React from 'react';
 import { makeStyles, createTheme } from '@material-ui/core/styles';
 import { useMediaQuery } from '@material-ui/core';
-// import 'font-awesome/css/font-awesome.min.css';
-// import { FaFacebook, FaYoutube, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaFacebook, FaYoutube, FaTwitter, FaInstagram } from 'react-icons/fa';
 import suit from '../img/suit.jpg';
 import SwingingFrame from '../Components/SwingingFrame/SwingingFrame';
 
@@ -44,7 +43,7 @@ const useStyles = makeStyles({
 		backgroundImage: `url(${suit})`,
 		backgroundRepeat: 'no-repeat',
 		backgroundSize: 'cover',
-		height: '100vh !important',
+		height: '100vh',
 		overflowY: 'hidden',
 		[theme.breakpoints.down('sm')]: {
 			backgroundPosition: 'center',
@@ -54,11 +53,15 @@ const useStyles = makeStyles({
 		display: 'flex',
 		flexDirection: 'column',
 		justifyContent: 'center',
-		height: '100vh',
+		alignItems: 'center',
 		width: '80%',
 		margin: theme.spacing(0, 'auto'),
-		[theme.breakpoints.down('sm')]: {
-			width: '100vw'
+		[theme.breakpoints.down('md')]: {
+			transform: 'translateY(-18%)',
+		},
+		[theme.breakpoints.down('xs')]: {
+			width: '100vw',
+			transform: 'translateY(50%)',
 		},
 	},
 	animated_H1: {
@@ -178,9 +181,12 @@ const useStyles = makeStyles({
 	list: {
 		display: 'flex',
 		flexDirection: 'column',
+		justifyContent: 'center',
+		alignItems: 'flex-end',
 		listStyleType: 'none',
-		margin: 0,
+		margin: theme.spacing(0, 3),
 		padding: 0,
+		transform: 'translateY(50%)',
 	},
 	listItem: {
 		width: '60px',
@@ -233,6 +239,38 @@ export const Home = () => {
 
 	return (
 		<div className={classes.homeWrapper}>
+			{isMobileOrSmaller ? null : (
+				<ul className={classes.list}>
+					<li className={`${classes.listItem} ${classes.facebook}`}>
+						<a href="https://www.facebook.com/joeydp8trow/" target="_blank" rel="noreferrer">
+							<FaFacebook className={classes.icon} />{' '}
+						</a>
+					</li>
+					<li className={`${classes.listItem} ${classes.youtube}`}>
+						<a
+							href="https://www.youtube.com/channel/UC4ePL-afZ7oPyiW075k0AJA"
+							target="_blank"
+							rel="noreferrer"
+						>
+							<FaYoutube className={classes.icon} />{' '}
+						</a>
+					</li>
+					<li className={`${classes.listItem} ${classes.linkedin}`}>
+						<a
+							href="https://www.linkedin.com/in/joseph-dipietro-aa398b171/"
+							target="_blank"
+							rel="noreferrer"
+						>
+							<FaTwitter className={classes.icon} />
+						</a>
+					</li>
+					<li className={`${classes.listItem} ${classes.instagram}`}>
+						<a href="https://www.instagram.com/bigjoeymagicshowy/" target="_blank" rel="noreferrer">
+							<FaInstagram className={classes.icon} />{' '}
+						</a>
+					</li>
+				</ul>
+			)}
 			{isDesktopOrLarger ? <SwingingFrame /> : null}
 			<div className={classes.centerContent}>
 				{isMobileOrSmaller ? (

@@ -191,21 +191,6 @@ const useStyles = makeStyles({
 		},
 	},
 	swing: {
-        // [theme.breakpoints.down('lg')]: {
-        //     position: 'absolute',
-        //     top: 100,
-        //     right: 100,
-		// },
-        // [theme.breakpoints.up('xl')]: {
-		// 	width: 700,
-		// },
-        // display: 'flex',
-        // justifyContent: 'center',
-        // alignItems: 'center',
-        // width: '100%',
-        // height: '100%',
-		// width: '18vw',
-		// height: '30vh',
 		border: '1.5px solid #FFD700',
 		animation: '$swing ease-in-out 1s infinite alternate',
 		boxShadow: '5px 5px 10px rgba(0,0,0,0.5)',
@@ -224,8 +209,12 @@ const useStyles = makeStyles({
             margin: theme.spacing(0, 'auto'),
 		},
         [theme.breakpoints.down('sm')]: {
-            width: '80%',
-            height: '25%',
+            width: '75%',
+            margin: theme.spacing(0, 'auto'),
+		},
+        [theme.breakpoints.down('xs')]: {
+            width: '95%',
+            height: '200px',
             margin: theme.spacing(0, 'auto'),
 		},
 		/* string */
