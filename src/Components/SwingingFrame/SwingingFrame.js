@@ -191,16 +191,43 @@ const useStyles = makeStyles({
 		},
 	},
 	swing: {
-        position: 'absolute',
-        right: 10,
-        top: 10,
-		width: '325px',
-		height: '400px',
+        // [theme.breakpoints.down('lg')]: {
+        //     position: 'absolute',
+        //     top: 100,
+        //     right: 100,
+		// },
+        // [theme.breakpoints.up('xl')]: {
+		// 	width: 700,
+		// },
+        // display: 'flex',
+        // justifyContent: 'center',
+        // alignItems: 'center',
+        // width: '100%',
+        // height: '100%',
+		// width: '18vw',
+		// height: '30vh',
 		border: '1.5px solid #FFD700',
 		animation: '$swing ease-in-out 1s infinite alternate',
 		boxShadow: '5px 5px 10px rgba(0,0,0,0.5)',
 		backgroundImage: `url(${magic})`,
 		backgroundRepeat: 'no-repeat',
+        backgroundSize: '100% 100%',
+        [theme.breakpoints.up('lg')]: {
+            position: 'absolute',
+            top: '10%',
+            width: '30vw',
+            height: '30vh',
+
+		},
+        [theme.breakpoints.down('md')]: {
+            width: '50%',
+            margin: theme.spacing(0, 'auto'),
+		},
+        [theme.breakpoints.down('sm')]: {
+            width: '80%',
+            height: '25%',
+            margin: theme.spacing(0, 'auto'),
+		},
 		/* string */
 		'&:after': {
 			content: "''",
@@ -237,6 +264,9 @@ const useStyles = makeStyles({
 		fontSize: '20px',
 		fontStyle: 'italic',
 		color: '#FFD700',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '14px'
+		},
 	},
 	anim1: {
 		animation: '$cycle 15s linear infinite',

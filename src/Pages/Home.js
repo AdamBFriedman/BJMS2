@@ -1,9 +1,9 @@
 import React from 'react';
 import { makeStyles, createTheme } from '@material-ui/core/styles';
-import 'font-awesome/css/font-awesome.min.css';
-import { FaFacebook, FaYoutube, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { useMediaQuery } from '@material-ui/core';
+// import 'font-awesome/css/font-awesome.min.css';
+// import { FaFacebook, FaYoutube, FaTwitter, FaInstagram } from 'react-icons/fa';
 import suit from '../img/suit.jpg';
-import magic from '../img/magic3.jpg';
 import SwingingFrame from '../Components/SwingingFrame/SwingingFrame';
 
 const theme = createTheme();
@@ -45,6 +45,7 @@ const useStyles = makeStyles({
 		backgroundRepeat: 'no-repeat',
 		backgroundSize: 'cover',
 		height: '100vh !important',
+		overflowY: 'hidden',
 		[theme.breakpoints.down('sm')]: {
 			backgroundPosition: 'center',
 		},
@@ -54,7 +55,11 @@ const useStyles = makeStyles({
 		flexDirection: 'column',
 		justifyContent: 'center',
 		height: '100vh',
-		margin: theme.spacing(0, 4),
+		width: '80%',
+		margin: theme.spacing(0, 'auto'),
+		// [theme.breakpoints.down('md')]: {
+		// 	justifyContent: 'flex-end',
+		// },
 	},
 	animated_H1: {
 		fontFamily: "'PT Serif', sans-serif",
@@ -187,12 +192,16 @@ const useStyles = makeStyles({
 
 export const Home = () => {
 	const classes = useStyles();
+	const isDesktopOrLarger = useMediaQuery(theme.breakpoints.up('lg'))
 
 	return (
 		<div className={classes.homeWrapper}>
-			<SwingingFrame />
+						{isDesktopOrLarger	? <SwingingFrame /> : null}
 			<div className={classes.centerContent}>
-				<ul className={classes.list}>
+				{/* <div style={{display: 'flex', justifyContent: 'flex-end !important', alignItems: 'flex-end !important'}}> */}
+				{/* <SwingingFrame /> */}
+				{/* </div> */}
+				{/* <ul className={classes.list}>
 					<li className={`${classes.listItem} ${classes.facebook}`}>
 						<a href="https://www.facebook.com/joeydp8trow/" target="_blank" rel="noreferrer">
 							<FaFacebook className={classes.icon} />{' '}
@@ -221,7 +230,7 @@ export const Home = () => {
 							<FaInstagram className={classes.icon} />{' '}
 						</a>
 					</li>
-				</ul>
+				</ul> */}
 				<h1 className={classes.animated_H1}>
 					<span className={classes.animated_H1_span}>B</span>
 					<span className={classes.animated_H1_span}>I</span>
@@ -243,6 +252,8 @@ export const Home = () => {
 				</h1>
 
 				<h2 className={classes.animated_H2}>Family Entertainment Specialist</h2>
+
+				{isDesktopOrLarger	? null : <SwingingFrame /> }
 			</div>
 		</div>
 	);
