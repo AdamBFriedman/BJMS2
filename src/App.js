@@ -35,6 +35,10 @@ const useStyles = makeStyles({
 			background: 'linear-gradient(to left,#bdc3c7,#2c3e50)',
 			transition: '.3s',
 		},
+		[theme.breakpoints.up('xl')]: {
+			padding: theme.spacing(4, 8),
+			fontSize: '1.5em',
+		},
 	},
 	appbar: { background: 'transparent', boxShadow: 'none' },
 	menuButton: {

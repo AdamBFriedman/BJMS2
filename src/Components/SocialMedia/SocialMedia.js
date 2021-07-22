@@ -14,10 +14,6 @@ const useStyles = makeStyles({
 		listStyleType: 'none',
 		margin: theme.spacing(0, 3),
 		padding: 0,
-		// transform: 'translateY(50%)',
-		// [theme.breakpoints.up('xl')]: {
-		// 	transform: 'translateY(100%)',
-		// },
 		[theme.breakpoints.down('xs')]: {
 			transform: 'translateY(0)',
 			alignItems: 'center',
