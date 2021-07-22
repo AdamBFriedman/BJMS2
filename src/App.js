@@ -1,12 +1,19 @@
+import { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { makeStyles, createTheme } from '@material-ui/core/styles';
 import Home from './Pages/Home';
 import Meet from './Pages/Meet';
 import Services from './Pages/Services';
 import Contact from './Pages/Contact';
-import { AppBar, Toolbar, CssBaseline } from '@material-ui/core';
+import { AppBar, Toolbar, CssBaseline, useMediaQuery, Drawer, Divider, List } from '@material-ui/core';
 import './App.css';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import { GiMagicHat } from 'react-icons/gi';
+
+
 const theme = createTheme();
+const drawerWidth = '30%';
 
 const useStyles = makeStyles({
 	link: {
@@ -29,31 +36,100 @@ const useStyles = makeStyles({
 		},
 	},
 	appbar: { background: 'transparent', boxShadow: 'none' },
+	menuButton: {
+		color: '#FFD700',
+	},
+	toolbar: theme.mixins.toolbar,
+	drawerPaper: {
+		background: 'linear-gradient(to left,#bdc3c7,#2c3e50)',
+		width: drawerWidth,
+		margin: theme.spacing(0, 'auto')
+	},
+	icon: {
+		margin: theme.spacing(2),
+		padding: 0,
+		color: '#FFD700'
+	},
+	menuBar: {
+		textAlign: 'center',
+	},
+	menuLink: {
+		textDecoration: "none",
+		color: '#FFD700',
+		fontWeight: 900
+	},
+	menuItem: {
+		padding: theme.spacing(3, 0),
+	},
 });
 
 function App() {
 	const classes = useStyles();
+	const isMobileOrSmaller = useMediaQuery(theme.breakpoints.down('xs'));
+	const [mobileOpen, setMobileOpen] = useState(false);
+
+	const handleClick = () => {
+		setMobileOpen(!mobileOpen);
+	};
 	return (
 		<Router>
 			<div>
 				<CssBaseline />
 				<AppBar className={classes.appbar}>
 					<Toolbar>
-						<Link className={classes.link} to="/">
-							Home
-						</Link>
-						<Link className={classes.link} to="/meet">
-							Meet Joey
-						</Link>
-						<Link className={classes.link} to="/services">
-							Services
-						</Link>
-						<Link className={classes.link} to="/contact">
-							Contact
-						</Link>
+						{isMobileOrSmaller ? (
+							<IconButton
+								onClick={handleClick}
+								edge="start"
+								className={classes.menuButton}
+								color="inherit"
+								aria-label="menu"
+							>
+								<MenuIcon />
+							</IconButton>
+						) : (
+							<>
+								<Link className={classes.link} to="/">
+									Home
+								</Link>
+								<Link className={classes.link} to="/meet">
+									Meet Joey
+								</Link>
+								<Link className={classes.link} to="/services">
+									Services
+								</Link>
+								<Link className={classes.link} to="/contact">
+									Contact
+								</Link>
+							</>
+						)}
 					</Toolbar>
 				</AppBar>
-
+				<Drawer
+					variant="temporary"
+					anchor={theme.direction === 'rtl' ? 'right' : 'left'}
+					open={mobileOpen}
+					onClose={handleClick}
+					classes={{
+						paper: classes.drawerPaper,
+					}}
+					ModalProps={{
+						keepMounted: true, // Better open performance on mobile.
+					}}
+				>
+					<div className={classes.menuBar}>
+						<GiMagicHat size={50} className={classes.icon} />
+						<Divider />
+						<Link to="/" className={classes.menuLink}><List className={classes.menuItem}>Home</List></Link>
+						<Divider />
+						<Link to="/meet" className={classes.menuLink}><List className={classes.menuItem}>Meet Joey</List></Link>
+						<Divider />
+						<Link to="/services" className={classes.menuLink}><List className={classes.menuItem}>Services</List></Link>
+						<Divider />
+						<Link to="/contact" className={classes.menuLink}><List className={classes.menuItem}>Contact</List></Link>
+						<Divider />
+					</div>
+				</Drawer>
 				<Switch>
 					<Route exact path="/">
 						<Home />
