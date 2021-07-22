@@ -57,9 +57,6 @@ const useStyles = makeStyles({
 		height: '100vh',
 		width: '80%',
 		margin: theme.spacing(0, 'auto'),
-		// [theme.breakpoints.down('md')]: {
-		// 	justifyContent: 'flex-end',
-		// },
 	},
 	animated_H1: {
 		fontFamily: "'PT Serif', sans-serif",
@@ -68,6 +65,9 @@ const useStyles = makeStyles({
 		textTransform: 'uppercase',
 		lineHeight: '3.5',
 		letterSpacing: theme.spacing(2),
+		[theme.breakpoints.down('sm')]: {
+            fontSize: '2em'
+		},
 	},
 	animated_H1_span: {
 		position: 'relative',
