@@ -10,6 +10,7 @@ import './App.css';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { GiMagicHat } from 'react-icons/gi';
+import SocialMedia from './Components/SocialMedia/SocialMedia';
 
 
 const theme = createTheme();
@@ -128,6 +129,7 @@ function App() {
 						<Divider />
 						<Link to="/contact" className={classes.menuLink}><List className={classes.menuItem}>Contact</List></Link>
 						<Divider />
+						<SocialMedia />
 					</div>
 				</Drawer>
 				<Switch>

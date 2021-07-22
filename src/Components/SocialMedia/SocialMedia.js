@@ -14,6 +14,10 @@ const useStyles = makeStyles({
 		margin: theme.spacing(0, 3),
 		padding: 0,
 		transform: 'translateY(50%)',
+		[theme.breakpoints.down('xs')]: {
+			transform: 'translateY(0)',
+			alignItems: 'center',
+		},
 	},
 	listItem: {
 		width: '60px',
@@ -24,9 +28,17 @@ const useStyles = makeStyles({
 		borderRadius: '50%',
 		background: 'black',
 		position: 'relative',
+		margin: theme.spacing(3, 0),
 		'&:hover': {
 			transform: 'translateX(20px)',
 			transition: '.3s',
+		},
+		[theme.breakpoints.down('xs')]: {
+			margin: theme.spacing(2, 0),
+			'&:hover': {
+				transform: 'translateX(0)',
+				transition: '0s',
+			},
 		},
 	},
 	icon: {
@@ -38,24 +50,16 @@ const useStyles = makeStyles({
 	},
 	facebook: {
 		background: '#4267b2',
-		marginTop: '25px',
-		marginBottom: '25px',
 	},
 	linkedin: {
 		background: '#0077b5',
-		marginTop: '25px',
-		marginBottom: '25px',
 	},
 	youtube: {
 		background: '#ED3833',
-		marginTop: '25px',
-		marginBottom: '25px',
 	},
 	instagram: {
 		background:
 			'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)',
-		marginTop: '25px',
-		marginBottom: '25px',
 	},
 });
 export const SocialMedia = () => {
