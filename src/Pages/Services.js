@@ -18,6 +18,12 @@ const useStyles = makeStyles({
 		// 	flexDirection: 'column',
 		// },
 	},
+  servicesCard: {
+    textAlign: 'center',
+    background: 'linear-gradient(to bottom left,#bdc3c7,#2c3e50, #3cacc8)',
+    width: '30%',
+    height: '50%'
+  }
 });
 
 function Services() {
@@ -25,7 +31,15 @@ function Services() {
 
 	return (
 		<div className={classes.servicesContainer}>
-
+      <div className={`${classes.servicesCard} ${classes.corporate}`}>
+        Corporate
+      </div>
+      <div className={`${classes.servicesCard} ${classes.lessons}`}>
+        Lessons
+      </div>
+      <div className={`${classes.servicesCard} ${classes.parties}`}>
+        Parties
+      </div>
 		</div>
 	);
 }
