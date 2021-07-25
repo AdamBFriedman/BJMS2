@@ -50,7 +50,7 @@ const useStyles = makeStyles(theme => ({
 		fontSize: '4em',
 		paddingBottom: '10px',
 		fontFamily: "'Open Sans Condensed', sans-serif",
-		background: 'linear-gradient(to top left,#bdc3c7, #f8b500, #bdc3c7)',
+		background: 'linear-gradient(to top left,#bdc3c7, #f8b500, #bdc3c7) !important',
 		WebkitBackgroundClip: 'text',
 		WebkitTextFillColor: 'rgba(255,255,255,.01)',
 		letterSpacing: '5px',
