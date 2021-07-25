@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { makeStyles, createTheme } from '@material-ui/core/styles';
-import { Modal, Fade, Backdrop } from '@material-ui/core';
+import { Modal, Fade, Backdrop, useMediaQuery } from '@material-ui/core';
 import smoke from '../img/smoke.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBuilding, faBirthdayCake, faChalkboardTeacher } from '@fortawesome/free-solid-svg-icons';
@@ -18,9 +18,10 @@ const useStyles = makeStyles({
 		display: 'flex',
 		justifyContent: 'space-around',
 		alignItems: 'center',
-		// [theme.breakpoints.down('md')]: {
-		// 	flexDirection: 'column',
-		// },
+		[theme.breakpoints.down('xs')]: {
+			flexDirection: 'column',
+      justifyContent: 'center'
+		},
 	},
 	servicesCard: {
 		color: '#fff',
@@ -35,6 +36,13 @@ const useStyles = makeStyles({
 		background: 'linear-gradient(to bottom left,#bdc3c7,#2c3e50, #3cacc8)',
 		width: '30%',
 		height: '50%',
+    [theme.breakpoints.down('xs')]: {
+			width: '80%',
+      height: '25%',
+      '&:nth-child(2)': {
+        margin: theme.spacing(3, 0)
+      },
+		},
 	},
 	title: {
 		display: 'flex',
@@ -46,6 +54,18 @@ const useStyles = makeStyles({
 		WebkitBackgroundClip: 'text',
 		WebkitTextFillColor: 'rgba(255,255,255,.01)',
 		letterSpacing: '5px',
+    [theme.breakpoints.up('xl')]: {
+			fontSize: '5em'
+		},
+    [theme.breakpoints.down('md')]: {
+			fontSize: '3em'
+		},
+    [theme.breakpoints.down('sm')]: {
+			fontSize: '2em'
+		},
+    [theme.breakpoints.down('xs')]: {
+			margin: 0,
+		},
 	},
 	icon: {
 		width: '200px',
@@ -62,11 +82,17 @@ const useStyles = makeStyles({
 		padding: theme.spacing(2, 4, 3),
 		width: '50%',
 		height: '50%',
+    [theme.breakpoints.down('xs')]: {
+			width: '90%',
+		},
 	},
 });
 
 function Services() {
 	const classes = useStyles();
+  const isXLDesktop = useMediaQuery(theme.breakpoints.up('xl'));
+	const isTabletOrHigher = useMediaQuery(theme.breakpoints.up('sm'));
+	const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
 	const [openCorporate, setOpenCorporate] = useState(false);
 	const [openLessons, setOpenLessons] = useState(false);
 	const [openParties, setOpenParties] = useState(false);
@@ -99,7 +125,7 @@ function Services() {
 		<div className={classes.servicesContainer}>
 			<div className={`${classes.servicesCard} ${classes.corporate}`} onClick={handleOpenCorporate}>
 				<h1 className={classes.title}>Corporate</h1>
-				<FontAwesomeIcon size={'10x'} icon={faBuilding} />
+				<FontAwesomeIcon size={isXLDesktop ? '10x' : isTabletOrHigher ? '6x': isMobile ? '3x' : '3x'} icon={faBuilding} />
 			</div>
 			<Modal
 				className={classes.modal}
@@ -129,7 +155,7 @@ function Services() {
 			<div className={`${classes.servicesCard} ${classes.lessons}`} onClick={handleOpenLessons}>
 				<h1 className={classes.title}>Lessons</h1>
 
-				<FontAwesomeIcon size={'10x'} icon={faChalkboardTeacher} />
+				<FontAwesomeIcon size={isXLDesktop ? '10x' : isTabletOrHigher ? '6x': isMobile ? '3x' : '3x'} icon={faChalkboardTeacher} />
 			</div>
 			<Modal
 				className={classes.modal}
@@ -158,7 +184,7 @@ function Services() {
 
 			<div className={`${classes.servicesCard} ${classes.parties}`} onClick={handleOpenParties}>
 				<h1 className={classes.title}>Parties</h1>
-				<FontAwesomeIcon size={'10x'} className={classes.icon} icon={faBirthdayCake} />
+				<FontAwesomeIcon size={isXLDesktop ? '10x' : isTabletOrHigher ? '6x': isMobile ? '3x' : '3x'} className={classes.icon} icon={faBirthdayCake} />
 			</div>
 
 			<Modal
