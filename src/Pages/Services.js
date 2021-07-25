@@ -20,7 +20,7 @@ const useStyles = makeStyles({
 		alignItems: 'center',
 		[theme.breakpoints.down('xs')]: {
 			flexDirection: 'column',
-      justifyContent: 'center'
+			justifyContent: 'center',
 		},
 	},
 	servicesCard: {
@@ -36,12 +36,12 @@ const useStyles = makeStyles({
 		background: 'linear-gradient(to bottom left,#bdc3c7,#2c3e50, #3cacc8)',
 		width: '30%',
 		height: '50%',
-    [theme.breakpoints.down('xs')]: {
+		[theme.breakpoints.down('xs')]: {
 			width: '80%',
-      height: '25%',
-      '&:nth-child(2)': {
-        margin: theme.spacing(3, 0)
-      },
+			height: '25%',
+			'&:nth-child(2)': {
+				margin: theme.spacing(3, 0),
+			},
 		},
 	},
 	title: {
@@ -54,14 +54,14 @@ const useStyles = makeStyles({
 		WebkitBackgroundClip: 'text',
 		WebkitTextFillColor: 'rgba(255,255,255,.01)',
 		letterSpacing: '5px',
-    [theme.breakpoints.up('xl')]: {
-			fontSize: '5em'
+		[theme.breakpoints.up('xl')]: {
+			fontSize: '5em',
 		},
-    [theme.breakpoints.down('md')]: {
-			fontSize: '3em'
+		[theme.breakpoints.down('md')]: {
+			fontSize: '3em',
 		},
-    [theme.breakpoints.down('sm')]: {
-			fontSize: '2em'
+		[theme.breakpoints.down('sm')]: {
+			fontSize: '2em',
 		},
 	},
 	icon: {
@@ -79,7 +79,7 @@ const useStyles = makeStyles({
 		padding: theme.spacing(2, 4, 3),
 		width: '50%',
 		height: '50%',
-    [theme.breakpoints.down('xs')]: {
+		[theme.breakpoints.down('xs')]: {
 			width: '90%',
 		},
 	},
@@ -87,7 +87,7 @@ const useStyles = makeStyles({
 
 function Services() {
 	const classes = useStyles();
-  const isXLDesktop = useMediaQuery(theme.breakpoints.up('xl'));
+	const isXLDesktop = useMediaQuery(theme.breakpoints.up('xl'));
 	const isTabletOrHigher = useMediaQuery(theme.breakpoints.up('sm'));
 	const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
 	const [openCorporate, setOpenCorporate] = useState(false);
@@ -122,7 +122,10 @@ function Services() {
 		<div className={classes.servicesContainer}>
 			<div className={`${classes.servicesCard} ${classes.corporate}`} onClick={handleOpenCorporate}>
 				<h1 className={classes.title}>Corporate</h1>
-				<FontAwesomeIcon size={isXLDesktop ? '10x' : isTabletOrHigher ? '6x': isMobile ? '3x' : '3x'} icon={faBuilding} />
+				<FontAwesomeIcon
+					size={isXLDesktop ? '10x' : isTabletOrHigher ? '6x' : isMobile ? '3x' : '3x'}
+					icon={faBuilding}
+				/>
 			</div>
 			<Modal
 				className={classes.modal}
@@ -152,7 +155,10 @@ function Services() {
 			<div className={`${classes.servicesCard} ${classes.lessons}`} onClick={handleOpenLessons}>
 				<h1 className={classes.title}>Lessons</h1>
 
-				<FontAwesomeIcon size={isXLDesktop ? '10x' : isTabletOrHigher ? '6x': isMobile ? '3x' : '3x'} icon={faChalkboardTeacher} />
+				<FontAwesomeIcon
+					size={isXLDesktop ? '10x' : isTabletOrHigher ? '6x' : isMobile ? '3x' : '3x'}
+					icon={faChalkboardTeacher}
+				/>
 			</div>
 			<Modal
 				className={classes.modal}
@@ -181,7 +187,11 @@ function Services() {
 
 			<div className={`${classes.servicesCard} ${classes.parties}`} onClick={handleOpenParties}>
 				<h1 className={classes.title}>Parties</h1>
-				<FontAwesomeIcon size={isXLDesktop ? '10x' : isTabletOrHigher ? '6x': isMobile ? '3x' : '3x'} className={classes.icon} icon={faBirthdayCake} />
+				<FontAwesomeIcon
+					size={isXLDesktop ? '10x' : isTabletOrHigher ? '6x' : isMobile ? '3x' : '3x'}
+					className={classes.icon}
+					icon={faBirthdayCake}
+				/>
 			</div>
 
 			<Modal
