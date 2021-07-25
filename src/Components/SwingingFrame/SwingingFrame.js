@@ -1,10 +1,8 @@
 import React from 'react';
-import { makeStyles, createTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import magic from '../../img/magic3.jpg';
 
-const theme = createTheme();
-
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
 	'@keyframes swing': {
 		'0%': { transform: 'rotate(3deg)' },
 		'100%': { transform: 'rotate(-3deg)' },
@@ -272,7 +270,7 @@ const useStyles = makeStyles({
 	anim5: {
 		animation: '$cycle5 15s linear infinite',
 	},
-});
+}));
 export const SwingingFrame = () => {
 	const classes = useStyles();
 

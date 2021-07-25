@@ -1,9 +1,7 @@
 import React from 'react';
-import { makeStyles, createTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
-const theme = createTheme();
-
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
 	'@keyframes tracking-in-expand-fwd-bottom': {
 		'0%': {
 			letterSpacing: '-0.5em',
@@ -93,7 +91,7 @@ const useStyles = makeStyles({
 			marginRight: '.3rem',
 		},
 	},
-});
+}));
 export const MeetJoey = () => {
 	const classes = useStyles();
 

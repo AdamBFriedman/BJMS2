@@ -1,19 +1,17 @@
 import React from 'react';
-import { makeStyles, createTheme } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { useMediaQuery } from '@material-ui/core';
 
-
-const theme = createTheme();
-
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
     iframe: {
 		[theme.breakpoints.down('md')]: {
 			marginBottom: '10px',
 		},
     }
-});
+}));
 export const JoeyIframe = () => {
 	const classes = useStyles();
+	const theme = useTheme();
 	const isXLDesktop = useMediaQuery(theme.breakpoints.up('xl'));
 	const isTabletOrHigher = useMediaQuery(theme.breakpoints.up('sm'));
 	const isMobile = useMediaQuery(theme.breakpoints.down('xs'));

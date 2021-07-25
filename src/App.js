@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import { makeStyles, createTheme, ThemeProvider } from '@material-ui/core/styles';
+import { makeStyles, useTheme, ThemeProvider } from '@material-ui/core/styles';
 import Home from './Pages/Home';
 import Meet from './Pages/Meet';
 import Services from './Pages/Services';
@@ -12,7 +12,6 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { GiMagicHat } from 'react-icons/gi';
 import SocialMedia from './Components/SocialMedia/SocialMedia';
 
-const theme = createTheme();
 const drawerWidth = '30%';
 
 const useStyles = makeStyles((theme) => ({
@@ -68,6 +67,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function App() {
+	const theme = useTheme();
 	const classes = useStyles();
 	const isMobileOrSmaller = useMediaQuery(theme.breakpoints.down('xs'));
 	const [mobileOpen, setMobileOpen] = useState(false);
@@ -146,22 +146,22 @@ function App() {
 
 				<Switch>
 					<Route exact path="/">
-						<ThemeProvider>
+						<ThemeProvider theme={theme}>
 							<Home />
 						</ThemeProvider>
 					</Route>
 					<Route path="/meet">
-						<ThemeProvider>
+						<ThemeProvider theme={theme}>
 							<Meet />
 						</ThemeProvider>
 					</Route>
 					<Route path="/services">
-						<ThemeProvider>
+						<ThemeProvider theme={theme}>
 							<Services />
 						</ThemeProvider>
 					</Route>
 					<Route path="/contact">
-						<ThemeProvider>
+						<ThemeProvider theme={theme}>
 							<Contact />
 						</ThemeProvider>
 					</Route>

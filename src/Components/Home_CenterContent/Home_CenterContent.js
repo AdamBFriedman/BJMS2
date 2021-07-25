@@ -1,10 +1,8 @@
-import { makeStyles, createTheme } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { useMediaQuery } from '@material-ui/core';
 import SwingingFrame from '../SwingingFrame/SwingingFrame';
 
-const theme = createTheme();
-
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
     '@keyframes jump': {
 		'0%': {
 			transform: 'translateY(0px) rotate(0deg)',
@@ -171,9 +169,10 @@ const useStyles = makeStyles({
 			fontSize: '1.4em',
 		},
 	},
-});
+}));
 export const Title = () => {
 	const classes = useStyles();
+	const theme = useTheme();
     const isDesktopOrLarger = useMediaQuery(theme.breakpoints.up('lg'));
 	const isMobileOrSmaller = useMediaQuery(theme.breakpoints.down('xs'));
 

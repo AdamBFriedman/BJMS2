@@ -1,13 +1,11 @@
 import { useState } from 'react';
-import { makeStyles, createTheme } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Modal, Fade, Backdrop, useMediaQuery } from '@material-ui/core';
 import smoke from '../img/smoke.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBuilding, faBirthdayCake, faChalkboardTeacher } from '@fortawesome/free-solid-svg-icons';
 
-const theme = createTheme();
-
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
 	servicesContainer: {
 		fontFamily: 'Roboto, sans-serif',
 		backgroundImage: `url(${smoke})`,
@@ -85,10 +83,11 @@ const useStyles = makeStyles({
 			width: '90%',
 		},
 	},
-});
+}));
 
 function Services() {
 	const classes = useStyles();
+	const theme = useTheme();
 	const isXLDesktop = useMediaQuery(theme.breakpoints.up('xl'));
 	const isTabletOrHigher = useMediaQuery(theme.breakpoints.up('sm'));
 	const isMobile = useMediaQuery(theme.breakpoints.down('xs'));

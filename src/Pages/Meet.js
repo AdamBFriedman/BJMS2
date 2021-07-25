@@ -1,11 +1,9 @@
-import { makeStyles, createTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import coin from '../img/coin.jpg';
 import MeetJoey from '../Components/MeetJoey/MeetJoey';
 import JoeyIframe from '../Components/JoeyIframe/JoeyIframe';
 
-const theme = createTheme();
-
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
 	meetContainer: {
 		fontFamily: 'Roboto, sans-serif',
 		backgroundImage: `url(${coin})`,
@@ -19,7 +17,7 @@ const useStyles = makeStyles({
 			flexDirection: 'column',
 		},
 	},
-});
+}));
 
 function Meet() {
 	const classes = useStyles();

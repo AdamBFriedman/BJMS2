@@ -1,10 +1,8 @@
 import React from 'react';
-import { makeStyles, createTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import { FaFacebook, FaYoutube, FaTwitter, FaInstagram } from 'react-icons/fa';
 
-const theme = createTheme();
-
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
 	list: {
 		height: '100%',
 		display: 'flex',
@@ -68,7 +66,7 @@ const useStyles = makeStyles({
 		background:
 			'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)',
 	},
-});
+}));
 export const SocialMedia = () => {
 	const classes = useStyles();
 

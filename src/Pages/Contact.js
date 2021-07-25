@@ -1,10 +1,8 @@
-import { makeStyles, createTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import { Card, TextField, Button, Typography } from '@material-ui/core';
 import stage from '../img/stage.jpg';
 
-const theme = createTheme();
-
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
 	contactContainer: {
 		fontFamily: 'Roboto, sans-serif',
 		backgroundImage: `url(${stage})`,
@@ -46,11 +44,11 @@ const useStyles = makeStyles({
 		borderBottom: '1px solid #3cacc8',
 	},
 	button: {
-    background: '#3cacc8',
-    color: '#fff',
+		background: '#3cacc8',
+		color: '#fff',
 		marginTop: theme.spacing(3),
 	},
-});
+}));
 
 function Contact() {
 	const classes = useStyles();

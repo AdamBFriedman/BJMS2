@@ -1,14 +1,12 @@
 import React from 'react';
-import { makeStyles, createTheme } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { useMediaQuery } from '@material-ui/core';
 import suit from '../img/suit.jpg';
 import SwingingFrame from '../Components/SwingingFrame/SwingingFrame';
 import SocialMedia from '../Components/SocialMedia/SocialMedia';
 import CenterContent from '../Components/Home_CenterContent/Home_CenterContent';
 
-const theme = createTheme();
-
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
 	'@keyframes jump': {
 		'0%': {
 			transform: 'translateY(0px) rotate(0deg)',
@@ -50,18 +48,17 @@ const useStyles = makeStyles({
 			backgroundPosition: 'center',
 		},
 	},
-});
+}));
 
 export const Home = () => {
 	const classes = useStyles();
+	const theme = useTheme();
 	const isDesktopOrLarger = useMediaQuery(theme.breakpoints.up('lg'));
 	const isMobileOrSmaller = useMediaQuery(theme.breakpoints.down('xs'));
 
 	return (
 		<div className={classes.homeWrapper}>
-			{isMobileOrSmaller ? null : (
-				<SocialMedia />
-			)}
+			{isMobileOrSmaller ? null : <SocialMedia />}
 			{isDesktopOrLarger ? <SwingingFrame /> : null}
 			<CenterContent />
 		</div>
