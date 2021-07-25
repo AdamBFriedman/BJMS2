@@ -63,9 +63,6 @@ const useStyles = makeStyles({
     [theme.breakpoints.down('sm')]: {
 			fontSize: '2em'
 		},
-    [theme.breakpoints.down('xs')]: {
-			margin: 0,
-		},
 	},
 	icon: {
 		width: '200px',
