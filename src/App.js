@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import { makeStyles, createTheme } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import Home from './Pages/Home';
 import Meet from './Pages/Meet';
 import Services from './Pages/Services';
