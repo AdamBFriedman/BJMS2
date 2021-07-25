@@ -51,8 +51,8 @@ const useStyles = makeStyles(theme => ({
 		paddingBottom: '10px',
 		fontFamily: "'Open Sans Condensed', sans-serif",
 		background: 'linear-gradient(to top left,#bdc3c7, #f8b500, #bdc3c7) !important',
-		WebkitBackgroundClip: 'text',
-		WebkitTextFillColor: 'rgba(255,255,255,.01)',
+		WebkitBackgroundClip: 'text !important',
+		WebkitTextFillColor: 'rgba(255,255,255,.01) !important',
 		letterSpacing: '5px',
 		[theme.breakpoints.up('xl')]: {
 			fontSize: '5em',
