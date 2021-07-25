@@ -34,6 +34,7 @@ const useStyles = makeStyles({
 		alignItems: 'center',
 		flexDirection: 'column',
 		background: 'linear-gradient(to bottom left,#bdc3c7,#2c3e50, #3cacc8)',
+    border: "1.5px solid #3cacc8",
 		width: '30%',
 		height: '50%',
 		[theme.breakpoints.down('xs')]: {
