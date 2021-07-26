@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { createBrowserHistory } from "history";
 import { makeStyles, useTheme, ThemeProvider } from '@material-ui/core/styles';
 import Home from './Pages/Home';
 import Meet from './Pages/Meet';
@@ -75,8 +76,11 @@ function App() {
 	const handleClick = () => {
 		setMobileOpen(!mobileOpen);
 	};
+
+	const history = createBrowserHistory();
+
 	return (
-		<Router>
+		<Router history={history}>
 			<div>
 				<CssBaseline />
 				<AppBar className={classes.appbar}>
