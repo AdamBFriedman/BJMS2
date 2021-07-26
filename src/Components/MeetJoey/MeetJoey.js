@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     width: "40%",
     height: "70%",
     [theme.breakpoints.down("md")]: {
-      width: "90%",
+      width: "80%",
       height: "40%",
       margin: "auto",
       transform: "translateY(30px)",
