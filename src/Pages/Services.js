@@ -50,9 +50,9 @@ const useStyles = makeStyles(theme => ({
 		fontSize: '4em',
 		paddingBottom: '10px',
 		fontFamily: "'Open Sans Condensed', sans-serif",
-		background: 'linear-gradient(to top left,#bdc3c7, #f8b500, #bdc3c7) !important',
-		WebkitBackgroundClip: 'text !important',
-		WebkitTextFillColor: 'rgba(255,255,255,.01) !important',
+		background: 'linear-gradient(to top left,#bdc3c7, #f8b500, #bdc3c7)',
+		WebkitBackgroundClip: 'text',
+		WebkitTextFillColor: 'rgba(255,255,255,.01)',
 		letterSpacing: '5px',
 		[theme.breakpoints.up('xl')]: {
 			fontSize: '5em',
@@ -62,6 +62,7 @@ const useStyles = makeStyles(theme => ({
 		},
 		[theme.breakpoints.down('sm')]: {
 			fontSize: '2em',
+			color: '#f8b500'
 		},
 	},
 	icon: {
