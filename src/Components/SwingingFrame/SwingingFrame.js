@@ -197,7 +197,7 @@ const useStyles = makeStyles(theme => ({
         backgroundSize: '100% 100%',
         [theme.breakpoints.up('lg')]: {
             position: 'absolute',
-            top: '10%',
+            top: '15%',
             width: '30vw',
             height: '30vh',
 
