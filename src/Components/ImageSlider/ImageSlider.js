@@ -56,8 +56,12 @@ const useStyles = makeStyles((theme) => ({
   },
   listItem: {
     padding: "0 !important",
+    height: '300px !important',
+    [theme.breakpoints.down("lg")]: {
+      height: '200px !important'
+    },
   },
-  img: { height: "30vh", width: "100%" },
+  img: { height: "100%", width: "100%" },
 }));
 
 export default function ImageSlider() {
