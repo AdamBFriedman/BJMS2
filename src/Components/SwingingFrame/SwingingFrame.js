@@ -213,7 +213,7 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.down('xs')]: {
             width: '95%',
             height: '200px',
-            margin: theme.spacing(0, 'auto'),
+            margin: theme.spacing(3),
 		},
 		/* string */
 		'&:after': {
