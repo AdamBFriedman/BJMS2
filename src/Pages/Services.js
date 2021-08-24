@@ -38,9 +38,14 @@ const useStyles = makeStyles(theme => ({
 		height: '50%',
 		[theme.breakpoints.down('xs')]: {
 			width: '80%',
-			height: '25%',
+			'&:nth-child(1)': {
+				marginTop: theme.spacing(6),
+			},
 			'&:nth-child(2)': {
 				margin: theme.spacing(3, 0),
+			},
+			'&:nth-child(3)': {
+				marginBottom: theme.spacing(3),
 			},
 		},
 	},
