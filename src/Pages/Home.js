@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
 		backgroundRepeat: 'no-repeat',
 		backgroundSize: 'cover',
 		height: '100vh',
-		overflowY: 'hidden',
+		overflowY: 'scroll',
 		[theme.breakpoints.down('sm')]: {
 			backgroundPosition: 'center',
 		},
