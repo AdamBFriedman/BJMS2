@@ -50,14 +50,12 @@ const useStyles = makeStyles(theme => ({
 		},
 	},
 	title: {
+		color: '#f8b500',
 		display: 'flex',
 		alignItems: 'flex-end',
 		fontSize: '4em',
 		paddingBottom: '10px',
 		fontFamily: "'Open Sans Condensed', sans-serif",
-		background: 'linear-gradient(to top left,#bdc3c7, #f8b500, #bdc3c7)',
-		WebkitBackgroundClip: 'text',
-		WebkitTextFillColor: 'rgba(255,255,255,.01)',
 		letterSpacing: '5px',
 		[theme.breakpoints.up('xl')]: {
 			fontSize: '5em',
