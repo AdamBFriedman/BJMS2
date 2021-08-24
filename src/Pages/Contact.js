@@ -90,7 +90,7 @@ function Contact() {
             name="Number of Guests"
             label="# of Guests"
             type="number"
-			InputProps={{ classes: { underline: classes.underline } }}
+            InputProps={{ classes: { underline: classes.underline } }}
             onChange={(e) => {
               if (e.target.value < 0) {
                 e.target.value = 0;

@@ -49,13 +49,15 @@ const useStyles = makeStyles((theme) => ({
     width: "90%",
   },
   imageList: {
+    display: "flex",
+    justifyContent: "space-between",
     flexWrap: "nowrap",
     transform: "translateZ(0)",
   },
   listItem: {
-    padding: '0 !important'
+    padding: "0 !important",
   },
-  img: { height: "100%", width: '100%'},
+  img: { height: "30vh", width: "100%" },
 }));
 
 export default function ImageSlider() {
