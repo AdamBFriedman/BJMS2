@@ -87,6 +87,7 @@ const useStyles = makeStyles(theme => ({
 		height: '50%',
 		[theme.breakpoints.down('xs')]: {
 			width: '90%',
+			overflowY: 'scroll'
 		},
 	},
 }));
