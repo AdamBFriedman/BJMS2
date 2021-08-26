@@ -69,6 +69,9 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     width: "90%",
     height: "100% !important",
+    [theme.breakpoints.down("xs")]: {
+      height: "50% !important",
+    },
   },
   modal: {
     display: "flex",
@@ -136,9 +139,9 @@ export const MeetJoey = () => {
     <>
       <div className={classes.meetJoeyWrapper} onClick={handleOpen}>
         <h1 className={classes.h1}>Meet Joey</h1>
-		<div className={classes.imageSliderWrapper}>
-        <ImageSlider />
-		</div>
+        <div className={classes.imageSliderWrapper}>
+          <ImageSlider />
+        </div>
       </div>
       <Modal
         className={classes.modal}
