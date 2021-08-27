@@ -30,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-around",
     width: "40%",
     height: "70%",
+	cursor: 'pointer',
     [theme.breakpoints.down("md")]: {
       width: "80%",
       height: "40%",
@@ -139,7 +140,7 @@ export const MeetJoey = () => {
     <>
       <div className={classes.meetJoeyWrapper} onClick={handleOpen}>
         <h1 className={classes.h1}>Meet Joey</h1>
-        <div className={classes.imageSliderWrapper}>
+        <div className={classes.imageSliderWrapper} onMouseEnter={handleOpen} onMouseClose={handleClose}>
           <ImageSlider />
         </div>
       </div>
