@@ -1,33 +1,33 @@
-import { makeStyles } from '@material-ui/core/styles';
-import coin from '../img/coin.jpg';
-import MeetJoey from '../Components/MeetJoey/MeetJoey';
-import JoeyIframe from '../Components/JoeyIframe/JoeyIframe';
+import { makeStyles } from "@material-ui/core/styles";
+import coin from "../img/coin.jpg";
+import MeetJoey from "../Components/MeetJoey/MeetJoey";
+import JoeyIframe from "../Components/JoeyIframe/JoeyIframe";
 
-const useStyles = makeStyles(theme => ({
-	meetContainer: {
-		fontFamily: 'Roboto, sans-serif',
-		backgroundImage: `url(${coin})`,
-		backgroundSize: 'cover',
-		backgroundRepeat: 'no-repeat',
-		height: '100vh',
-		display: 'flex',
-		justifyContent: 'space-around',
-		alignItems: 'center',
-		[theme.breakpoints.down('md')]: {
-			flexDirection: 'column',
-		},
-	},
+const useStyles = makeStyles((theme) => ({
+  meetContainer: {
+    fontFamily: "Roboto, sans-serif",
+    backgroundImage: `url(${coin})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    height: "100vh",
+    display: "flex",
+    justifyContent: "space-around",
+    alignItems: "center",
+    [theme.breakpoints.down("md")]: {
+      flexDirection: "column",
+    },
+  },
 }));
 
 function Meet() {
-	const classes = useStyles();
+  const classes = useStyles();
 
-	return (
-		<div className={classes.meetContainer}>
+  return (
+    <div className={classes.meetContainer}>
       <MeetJoey />
       <JoeyIframe />
-		</div>
-	);
+    </div>
+  );
 }
 
 export default Meet;

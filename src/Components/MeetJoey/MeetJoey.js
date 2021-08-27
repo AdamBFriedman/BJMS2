@@ -20,6 +20,14 @@ const useStyles = makeStyles((theme) => ({
       opacity: 1,
     },
   },
+  root: {
+    [theme.breakpoints.down("md")]: {
+      height: "100%",
+    },
+    [theme.breakpoints.down("xs")]: {
+      height: "auto",
+    },
+  },
   meetJoeyWrapper: {
     background: "linear-gradient(to bottom left,#bdc3c7,#2c3e50, #3cacc8)",
     boxShadow: "0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24)",
@@ -27,19 +35,14 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    justifyContent: "space-around",
-    width: "40%",
-    height: "70%",
-	cursor: 'pointer',
+    cursor: "pointer",
+    padding: theme.spacing(3),
     [theme.breakpoints.down("md")]: {
-      width: "80%",
-      height: "40%",
       margin: "auto",
-      transform: "translateY(30px)",
+      transform: "translateY(100px)",
     },
     [theme.breakpoints.down("xs")]: {
       transform: "translateY(0)",
-      height: "55%",
     },
   },
 
@@ -59,9 +62,10 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("md")]: {
       margin: 0,
+      fontSize: "4em",
     },
     [theme.breakpoints.down("sm")]: {
-      fontSize: "3.5em",
+      marginBottom: theme.spacing(1),
     },
   },
   imageSliderWrapper: {
@@ -137,10 +141,14 @@ export const MeetJoey = () => {
   };
 
   return (
-    <>
+    <div className={classes.root}>
       <div className={classes.meetJoeyWrapper} onClick={handleOpen}>
         <h1 className={classes.h1}>Meet Joey</h1>
-        <div className={classes.imageSliderWrapper} onMouseEnter={handleOpen} onMouseClose={handleClose}>
+        <div
+          className={classes.imageSliderWrapper}
+          onMouseEnter={handleOpen}
+          onMouseClose={handleClose}
+        >
           <ImageSlider />
         </div>
       </div>
@@ -172,7 +180,7 @@ export const MeetJoey = () => {
           </div>
         </Fade>
       </Modal>
-    </>
+    </div>
   );
 };
 
