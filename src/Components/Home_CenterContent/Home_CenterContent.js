@@ -40,8 +40,8 @@ const useStyles = makeStyles((theme) => ({
     width: "80%",
     margin: theme.spacing(0, "auto"),
     transform: "translateY(-150%)",
-    [theme.breakpoints.down("md")]: {
-      // transform: 'translateY(-18%)',
+    [theme.breakpoints.up("xl")]: {
+      transform: "translateY(-120%)",
     },
     [theme.breakpoints.down("xs")]: {
       width: "100vw",
@@ -56,7 +56,6 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: "3.5",
     letterSpacing: theme.spacing(2),
     [theme.breakpoints.up("xl")]: {
-      // transform: 'translateY(50%)',
       fontSize: "6em",
     },
     [theme.breakpoints.down("sm")]: {
