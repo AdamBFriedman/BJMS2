@@ -35,9 +35,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
-    background: "linear-gradient(to bottom left,#bdc3c7,#2c3e50, #3cacc8)",
+    background: `linear-gradient(to bottom left,#bdc3c7,#2c3e50, ${theme.palette.primary.main})`,
     cursor: "pointer",
-    border: "1.5px solid #3cacc8",
+    border: `1.5px solid ${theme.palette.primary.main}`,
     width: "30%",
     height: "50%",
     [theme.breakpoints.down("xs")]: {

@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     width: "40%",
     padding: theme.spacing(3),
-    border: "2px solid #3cacc8",
+    border: `2px solid ${theme.palette.primary.main}`,
     [theme.breakpoints.down("md")]: {
       width: "60%",
     },
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
   formHeader: {
     textAlign: "center",
-    color: "#3cacc8",
+    color: theme.palette.primary.main,
   },
   contactForm: {
     display: "grid",
@@ -41,10 +41,10 @@ const useStyles = makeStyles((theme) => ({
   },
   underline: {
     borderTop: "none",
-    borderBottom: "1px solid #3cacc8",
+    borderBottom: `1px solid ${theme.palette.primary.main}`,
   },
   button: {
-    background: "#3cacc8",
+    background: theme.palette.primary.main,
     color: "#fff",
     marginTop: theme.spacing(3),
     "&:hover": {
