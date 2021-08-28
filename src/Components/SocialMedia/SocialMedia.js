@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { FaFacebook, FaYoutube, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaFacebook, FaYoutube, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 const useStyles = makeStyles(theme => ({
 	list: {
@@ -84,7 +84,7 @@ export const SocialMedia = () => {
 			</li>
 			<li className={`${classes.listItem} ${classes.linkedin}`}>
 				<a href="https://www.linkedin.com/in/joseph-dipietro-aa398b171/" target="_blank" rel="noreferrer">
-					<FaTwitter className={classes.icon} />
+					<FaLinkedin className={classes.icon} />
 				</a>
 			</li>
 			<li className={`${classes.listItem} ${classes.instagram}`}>
