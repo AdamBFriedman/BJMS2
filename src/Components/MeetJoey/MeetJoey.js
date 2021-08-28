@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   meetJoeyWrapper: {
-    background: `linear-gradient(to bottom left,#bdc3c7,#2c3e50, ${theme.palette.primary.main})`,
+    background: `linear-gradient(to bottom left, ${theme.palette.grey.main}, #2c3e50, ${theme.palette.primary.main})`,
     boxShadow: "0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24)",
     border: `1.5px solid ${theme.palette.primary.main}`,
     display: "flex",
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "5.5em",
     fontFamily: "'Open Sans Condensed', sans-serif",
     display: "inline-block",
-    background: "linear-gradient(to top left,#bdc3c7, #f8b500, #bdc3c7)",
+    background: `linear-gradient(to top left, ${theme.palette.grey.main}, #f8b500, ${theme.palette.grey.main})`,
     backgroundRepeat: "no-repeat",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "rgba(255,255,255,.01)",
@@ -85,7 +85,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
-    border: "2px solid #BDC3C7",
+    border: `2px solid ${theme.palette.grey.main}`,
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
     width: "50%",

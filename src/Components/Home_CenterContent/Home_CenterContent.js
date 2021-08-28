@@ -156,7 +156,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.6rem",
     textTransform: "uppercase",
     letterSpacing: 1,
-    background: "linear-gradient(to left,#bdc3c7, #f8b500, #2c3e50)",
+    background: `linear-gradient(to left, ${theme.palette.grey.main}, #f8b500, #2c3e50)`,
     backgroundRepeat: "no-repeat",
     animation: "$swirl-in 2s 1s ease-out both",
     WebkitBackgroundClip: "text",

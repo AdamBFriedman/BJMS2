@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
-    background: `linear-gradient(to bottom left,#bdc3c7,#2c3e50, ${theme.palette.primary.main})`,
+    background: `linear-gradient(to bottom left, ${theme.palette.grey.main}, #2c3e50, ${theme.palette.primary.main})`,
     cursor: "pointer",
     border: `1.5px solid ${theme.palette.primary.main}`,
     width: "30%",
@@ -82,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
-    border: "2px solid #BDC3C7",
+    border: `2px solid ${theme.palette.grey.main}`,
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
     width: "50%",

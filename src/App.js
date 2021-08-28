@@ -22,7 +22,7 @@ const drawerWidth = "30%";
 
 const useStyles = makeStyles((theme) => ({
   drawerPaper: {
-    background: "linear-gradient(to left,#bdc3c7,#2c3e50)",
+    background: `linear-gradient(to left, ${theme.palette.grey.main}, #2c3e50)`,
     width: drawerWidth,
     margin: theme.spacing(0, "auto"),
   },

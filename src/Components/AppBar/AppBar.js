@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
     link: {
         margin: theme.spacing(2),
         border: `2px solid ${theme.palette.secondary.main}`,
-        background: "linear-gradient(to left,#bdc3c7,#2c3e50)",
+        background: `linear-gradient(to left, ${theme.palette.grey.main}, #2c3e50)`,
         borderRadius: 5,
         fontWeight: "bold",
         textDecoration: "none",
@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => ({
         "&:hover": {
           border: `2px solid ${theme.palette.primary.main}`,
           transform: "translateY(20px)",
-          background: "linear-gradient(to left,#bdc3c7,#2c3e50)",
+          background: `linear-gradient(to left, ${theme.palette.grey.main}, #2c3e50)`,
           transition: ".3s",
         },
         [theme.breakpoints.up("xl")]: {
