@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import magic from "../../img/magic3.jpg";
+import magic from "../../img/magic.jpg";
 
 const useStyles = makeStyles((theme) => ({
   "@keyframes swing": {
