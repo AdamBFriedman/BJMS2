@@ -1,31 +1,28 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { createBrowserHistory } from "history";
-import { makeStyles, useTheme, ThemeProvider } from "@material-ui/core/styles";
+import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
+import customTheme from './theme'
 import Home from "./Pages/Home";
 import Meet from "./Pages/Meet";
 import Services from "./Pages/Services";
 import Contact from "./Pages/Contact";
 import {
-  AppBar,
-  Toolbar,
   CssBaseline,
-  useMediaQuery,
   Drawer,
   Divider,
   List,
 } from "@material-ui/core";
 import "./App.css";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
 import { GiMagicHat } from "react-icons/gi";
 import SocialMedia from "./Components/SocialMedia/SocialMedia";
+import CustomAppBar from './Components/AppBar/AppBar'
 
 const drawerWidth = "30%";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((customTheme) => ({
   link: {
-    margin: theme.spacing(2),
+    margin: customTheme.spacing(2),
     border: "2px solid #FFD700",
     background: "linear-gradient(to left,#bdc3c7,#2c3e50)",
     borderRadius: 5,
@@ -33,17 +30,17 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     textTransform: "uppercase",
     textShadow: "0 5px 15px rgba(0,0,0,.3)",
-    padding: theme.spacing(2, 4),
+    padding: customTheme.spacing(2, 4),
     letterSpacing: 1.5,
-    color: "#FFD700",
+    color: customTheme.palette.secondary.main,
     "&:hover": {
-      border: "2px solid #3cacc8",
+      border: `2px solid ${customTheme.palette.primary.main}`,
       transform: "translateY(20px)",
       background: "linear-gradient(to left,#bdc3c7,#2c3e50)",
       transition: ".3s",
     },
-    [theme.breakpoints.up("xl")]: {
-      padding: theme.spacing(4, 8),
+    [customTheme.breakpoints.up("xl")]: {
+      padding: customTheme.spacing(4, 8),
       fontSize: "1.5em",
     },
   },
@@ -51,14 +48,14 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     color: "#FFD700",
   },
-  toolbar: theme.mixins.toolbar,
+  toolbar: customTheme.mixins.toolbar,
   drawerPaper: {
     background: "linear-gradient(to left,#bdc3c7,#2c3e50)",
     width: drawerWidth,
-    margin: theme.spacing(0, "auto"),
+    margin: customTheme.spacing(0, "auto"),
   },
   icon: {
-    margin: theme.spacing(2),
+    margin: customTheme.spacing(2),
     padding: 0,
     color: "#FFD700",
   },
@@ -71,14 +68,12 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 900,
   },
   menuItem: {
-    padding: theme.spacing(3, 0),
+    padding: customTheme.spacing(3, 0),
   },
 }));
 
 function App() {
-  const theme = useTheme();
   const classes = useStyles();
-  const isMobileOrSmaller = useMediaQuery(theme.breakpoints.down("xs"));
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleClick = () => {
@@ -89,41 +84,12 @@ function App() {
 
   return (
     <Router history={history}>
-      <div>
+      <ThemeProvider theme={customTheme}>
         <CssBaseline />
-        <AppBar className={classes.appbar}>
-          <Toolbar>
-            {isMobileOrSmaller ? (
-              <IconButton
-                onClick={handleClick}
-                edge="start"
-                className={classes.menuButton}
-                color="inherit"
-                aria-label="menu"
-              >
-                <MenuIcon />
-              </IconButton>
-            ) : (
-              <>
-                <Link className={classes.link} to="/">
-                  Home
-                </Link>
-                <Link className={classes.link} to="/meet">
-                  Meet Joey
-                </Link>
-                <Link className={classes.link} to="/services">
-                  Services
-                </Link>
-                <Link className={classes.link} to="/contact">
-                  Contact
-                </Link>
-              </>
-            )}
-          </Toolbar>
-        </AppBar>
+        <CustomAppBar handleClick={handleClick} />
         <Drawer
           variant="temporary"
-          anchor={theme.direction === "rtl" ? "right" : "left"}
+          anchor={customTheme.direction === "rtl" ? "right" : "left"}
           open={mobileOpen}
           onClose={handleClick}
           classes={{
@@ -158,27 +124,27 @@ function App() {
 
         <Switch>
           <Route exact path="/">
-            <ThemeProvider theme={theme}>
+            <ThemeProvider theme={customTheme}>
               <Home />
             </ThemeProvider>
           </Route>
           <Route path="/meet">
-            <ThemeProvider theme={theme}>
+            <ThemeProvider theme={customTheme}>
               <Meet />
             </ThemeProvider>
           </Route>
           <Route path="/services">
-            <ThemeProvider theme={theme}>
+            <ThemeProvider theme={customTheme}>
               <Services />
             </ThemeProvider>
           </Route>
           <Route path="/contact">
-            <ThemeProvider theme={theme}>
+            <ThemeProvider theme={customTheme}>
               <Contact />
             </ThemeProvider>
           </Route>
         </Switch>
-      </div>
+      </ThemeProvider>
     </Router>
   );
 }
