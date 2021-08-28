@@ -8,12 +8,11 @@ import {
   } from "@material-ui/core";
   import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
-  import customTheme from '../../theme';
 
 const useStyles = makeStyles(theme => ({
     link: {
         margin: theme.spacing(2),
-        border: "2px solid #FFD700",
+        border: `2px solid ${theme.palette.secondary.main}`,
         background: "linear-gradient(to left,#bdc3c7,#2c3e50)",
         borderRadius: 5,
         fontWeight: "bold",
@@ -36,9 +35,8 @@ const useStyles = makeStyles(theme => ({
       },
       appbar: { background: "transparent", boxShadow: "none" },
       menuButton: {
-        color: "#FFD700",
+        color: theme.palette.secondary.main,
       },
-      toolbar: theme.mixins.toolbar,
 }));
 
 export const CustomAppBar = ({handleClick}) => {

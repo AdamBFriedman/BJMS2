@@ -20,55 +20,27 @@ import CustomAppBar from './Components/AppBar/AppBar'
 
 const drawerWidth = "30%";
 
-const useStyles = makeStyles((customTheme) => ({
-  link: {
-    margin: customTheme.spacing(2),
-    border: "2px solid #FFD700",
-    background: "linear-gradient(to left,#bdc3c7,#2c3e50)",
-    borderRadius: 5,
-    fontWeight: "bold",
-    textDecoration: "none",
-    textTransform: "uppercase",
-    textShadow: "0 5px 15px rgba(0,0,0,.3)",
-    padding: customTheme.spacing(2, 4),
-    letterSpacing: 1.5,
-    color: customTheme.palette.secondary.main,
-    "&:hover": {
-      border: `2px solid ${customTheme.palette.primary.main}`,
-      transform: "translateY(20px)",
-      background: "linear-gradient(to left,#bdc3c7,#2c3e50)",
-      transition: ".3s",
-    },
-    [customTheme.breakpoints.up("xl")]: {
-      padding: customTheme.spacing(4, 8),
-      fontSize: "1.5em",
-    },
-  },
-  appbar: { background: "transparent", boxShadow: "none" },
-  menuButton: {
-    color: "#FFD700",
-  },
-  toolbar: customTheme.mixins.toolbar,
+const useStyles = makeStyles((theme) => ({
   drawerPaper: {
     background: "linear-gradient(to left,#bdc3c7,#2c3e50)",
     width: drawerWidth,
-    margin: customTheme.spacing(0, "auto"),
+    margin: theme.spacing(0, "auto"),
   },
   icon: {
-    margin: customTheme.spacing(2),
+    margin: theme.spacing(2),
     padding: 0,
-    color: "#FFD700",
+    color: theme.palette.secondary.main,
   },
   menuBar: {
     textAlign: "center",
   },
   menuLink: {
     textDecoration: "none",
-    color: "#FFD700",
+    color: theme.palette.secondary.main,
     fontWeight: 900,
   },
   menuItem: {
-    padding: customTheme.spacing(3, 0),
+    padding: theme.spacing(3, 0),
   },
 }));
 

@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(3),
     "&:hover": {
       color: "#000",
-      background: "#FFD700",
+      background: theme.palette.secondary.main,
     },
   },
 }));

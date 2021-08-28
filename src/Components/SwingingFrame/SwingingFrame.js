@@ -189,7 +189,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   swing: {
-    border: "1.5px solid #FFD700",
+    border: `1.5px solid ${theme.palette.secondary.main}`,
     animation: "$swing ease-in-out 1s infinite alternate",
     boxShadow: "5px 5px 10px rgba(0,0,0,0.5)",
     backgroundImage: `url(${magic})`,
@@ -220,7 +220,7 @@ const useStyles = makeStyles((theme) => ({
       position: "absolute",
       width: "11px",
       height: "11px",
-      border: "1px solid #FFD700",
+      border: `1px solid ${theme.palette.secondary.main}`,
       top: "-6.25px",
       left: "50%",
       zIndex: 0,
@@ -238,7 +238,7 @@ const useStyles = makeStyles((theme) => ({
       left: "51%",
       zIndex: 5,
       borderRadius: "50% 50%",
-      background: "#FFD700",
+      background: theme.palette.secondary.main,
     },
   },
   ol: {
@@ -249,7 +249,7 @@ const useStyles = makeStyles((theme) => ({
   quote: {
     fontSize: "20px",
     fontStyle: "italic",
-    color: "#FFD700",
+    color: theme.palette.secondary.main,
     [theme.breakpoints.down("xs")]: {
       fontSize: "14px",
     },
