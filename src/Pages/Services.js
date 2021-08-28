@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
-    background: `linear-gradient(to bottom left, ${theme.palette.grey.main}, #2c3e50, ${theme.palette.primary.main})`,
+    background: `linear-gradient(to bottom left, ${theme.palette.grey.main}, ${theme.palette.primary.dark}, ${theme.palette.primary.main})`,
     cursor: "pointer",
     border: `1.5px solid ${theme.palette.primary.main}`,
     width: "30%",
@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   title: {
-    color: "#f8b500",
+    color: theme.palette.secondary.main,
     display: "flex",
     alignItems: "flex-end",
     fontSize: "4em",
@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("sm")]: {
       fontSize: "2em",
-      color: "#f8b500",
+      color: theme.palette.secondary.main,
     },
   },
   icon: {

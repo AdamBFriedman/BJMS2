@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
   animated_H1_span: {
     position: "relative",
     display: "inline-block",
-    background: "linear-gradient(to left,#fceabb,#f8b500)",
+    background: `linear-gradient(to left, ${theme.palette.secondary.light}, ${theme.palette.secondary.main})`,
     backgroundRepeat: "no-repeat",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "rgba(255,255,255,.01)",
@@ -156,7 +156,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.6rem",
     textTransform: "uppercase",
     letterSpacing: 1,
-    background: `linear-gradient(to left, ${theme.palette.grey.main}, #f8b500, #2c3e50)`,
+    background: `linear-gradient(to left, ${theme.palette.grey.main}, ${theme.palette.secondary.main}, ${theme.palette.primary.dark})`,
     backgroundRepeat: "no-repeat",
     animation: "$swirl-in 2s 1s ease-out both",
     WebkitBackgroundClip: "text",
