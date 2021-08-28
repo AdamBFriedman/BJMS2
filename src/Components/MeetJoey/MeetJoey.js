@@ -146,8 +146,6 @@ export const MeetJoey = () => {
         <h1 className={classes.h1}>Meet Joey</h1>
         <div
           className={classes.imageSliderWrapper}
-          onMouseEnter={handleOpen}
-          onMouseClose={handleClose}
         >
           <ImageSlider />
         </div>

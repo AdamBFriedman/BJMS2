@@ -1,6 +1,17 @@
 import { makeStyles } from "@material-ui/core/styles";
 import coin from "../../img/coin.jpg";
 import suit from "../../img/suit.jpg";
+import joey_kid_happy from "../../img/joey_kid_happy.png";
+import joey_kid_happy2 from "../../img/joey_kid_happy2.png";
+import joey_kids from "../../img/joey_kids.png";
+import joey_kids2 from "../../img/joey_kids2.png";
+import joey_kids3 from "../../img/joey_kids3.png";
+import joey_kids4 from "../../img/joey_kids4.png";
+import joey_kids5 from "../../img/joey_kids5.png";
+import joey_pointer from "../../img/joey_pointer.png";
+import joey_ball from "../../img/joey_ball.png";
+import joey_card_fan from "../../img/joey_card_fan.png";
+import logo_face from "../../img/logo_face.png";
 import Carousel from "react-material-ui-carousel";
 
 const itemData = [
@@ -13,28 +24,44 @@ const itemData = [
     title: "Suit",
   },
   {
-    img: coin,
-    title: "Coin",
+    img: joey_kid_happy,
+    title: "Performing Kids",
   },
   {
-    img: suit,
-    title: "Suit",
+    img: joey_kid_happy2,
+    title: "Performing Kids 2",
   },
   {
-    img: coin,
-    title: "Coin",
+    img: joey_ball,
+    title: "Performing Ball",
   },
   {
-    img: suit,
-    title: "Suit",
+    img: joey_kids,
+    title: "Performing Kids 3",
   },
   {
-    img: coin,
-    title: "Coin",
+    img: joey_kids2,
+    title: "Performing Kids 4",
   },
   {
-    img: suit,
-    title: "Suit",
+    img: joey_pointer,
+    title: "Joey",
+  },
+  {
+    img: joey_kids3,
+    title: "Performing Kids 5",
+  },
+  {
+    img: joey_card_fan,
+    title: "Card Fan",
+  },
+  {
+    img: joey_kids5,
+    title: "Performing Kids 6",
+  },
+  {
+    img: joey_kids4,
+    title: "Performing Kids 7",
   },
 ];
 
@@ -44,7 +71,9 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
     justifyContent: "space-around",
     overflow: "hidden",
-    backgroundColor: theme.palette.background.paper,
+    backgroundImage: `url('${logo_face}')`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '100%'
   },
   imageList: {
     display: "flex",
