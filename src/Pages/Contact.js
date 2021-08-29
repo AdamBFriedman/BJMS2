@@ -65,9 +65,15 @@ const useStyles = makeStyles((theme) => ({
 function Contact() {
   const classes = useStyles();
   const [eventType, setEventType] = React.useState("");
+  const [locationType, setLocationType] = React.useState("");
 
-  const handleChange = (event) => {
+
+  const handleEventTypeChange = (event) => {
     setEventType(event.target.value);
+  };
+
+  const handleLocationTypeChange = (event) => {
+    setLocationType(event.target.value);
   };
 
   return (
@@ -88,13 +94,11 @@ function Contact() {
             name="Name"
             label="Name"
           />
-          <FormControl className={classes.formControl}>
-            <InputLabel id="demo-simple-select-label">Event Type</InputLabel>
+          <FormControl>
+            <InputLabel>Event Type</InputLabel>
             <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
               value={eventType}
-              onChange={handleChange}
+              onChange={handleEventTypeChange}
               name="Event Type"
               label="Event Type"
             >
@@ -105,6 +109,18 @@ function Contact() {
               <MenuItem value={"Camp"}>Camp</MenuItem>
               <MenuItem value={"Corporate"}>Corporate</MenuItem>
               <MenuItem value={"Other"}>Other</MenuItem>
+            </Select>
+          </FormControl>
+          <FormControl>
+            <InputLabel>Location Type</InputLabel>
+            <Select
+              value={locationType}
+              onChange={handleLocationTypeChange}
+              name="Location Type"
+              label="Location Type"
+            >
+              <MenuItem value={"Indoor"}>Indoor</MenuItem>
+              <MenuItem value={"Outdoor"}>Outdoor</MenuItem>
             </Select>
           </FormControl>
           <TextField
