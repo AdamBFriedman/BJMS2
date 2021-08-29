@@ -4,6 +4,7 @@ import { useMediaQuery } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
     iframe: {
+		border: `3px solid ${theme.palette.primary.main}`,
 		[theme.breakpoints.down('md')]: {
 			marginBottom: '10px',
 		},
@@ -22,7 +23,6 @@ export const JoeyIframe = () => {
 				height={isXLDesktop ? 700 : isTabletOrHigher ? 400 : isMobile ? 200 : 200}
 				title="Joey's Video"
 				src="https://www.youtube.com/embed/PehOTBiJx6o"
-				frameborder="0"
 				allowfullscreen
 				className={classes.iframe}
 			></iframe>
