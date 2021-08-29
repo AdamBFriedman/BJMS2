@@ -43,9 +43,14 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.main,
   },
   contactForm: {
-    display: "grid",
-    rowGap: theme.spacing(1),
+    // display: "grid",
+    // rowGap: theme.spacing(1),
+    // columnGap: theme.spacing(5),
     width: "100%",
+    // gridTemplateColumns: 'repeat(2, 1fr)',
+    // [theme.breakpoints.down("sm")]: {
+    //   gridTemplateColumns: 'repeat(1, 1fr)'
+    // },
   },
   underline: {
     borderTop: "none",
@@ -55,11 +60,24 @@ const useStyles = makeStyles((theme) => ({
     background: theme.palette.primary.main,
     color: "#fff",
     marginTop: theme.spacing(3),
+    padding: theme.spacing(2, 4),
     "&:hover": {
       color: "#000",
       background: theme.palette.secondary.main,
     },
   },
+  inputPadding: {
+    padding: theme.spacing(1, 0)
+  },
+  form: {
+    display: "grid",
+    rowGap: theme.spacing(1),
+    columnGap: theme.spacing(5),
+    gridTemplateColumns: 'repeat(2, 1fr)',
+    [theme.breakpoints.down("sm")]: {
+      gridTemplateColumns: 'repeat(1, 1fr)'
+    },
+  }
 }));
 
 function Contact() {
@@ -78,6 +96,7 @@ function Contact() {
           action="https://formspree.io/f/xeqvlyzv"
           method="POST"
         >
+          <div className={classes.form}>
           <TextField
             InputProps={{ classes: { underline: classes.underline } }}
             name="Name"
@@ -88,7 +107,6 @@ function Contact() {
             <Select
               className={classes.underline}
               name="Event Type"
-              label="Event Type"
             >
               <MenuItem value={"Birthday"}>Birthday</MenuItem>
               <MenuItem value={"Anniversary"}>Anniversary</MenuItem>
@@ -104,32 +122,23 @@ function Contact() {
             <Select
               className={classes.underline}
               name="Location Type"
-              label="Location Type"
             >
               <MenuItem value={"Indoor"}>Indoor</MenuItem>
               <MenuItem value={"Outdoor"}>Outdoor</MenuItem>
             </Select>
           </FormControl>
-          <FormControl>
             <TextField
               name="Date"
-              label="Date"
-              InputProps={{ classes: { underline: classes.underline } }}
+              InputProps={{ classes: { underline:`${ classes.underline} ${classes.inputPadding}` } }}
               type="date"
+              InputLabelProps={{shrink: false}}
             />
-          </FormControl>
           <TextField
-            InputProps={{ classes: { underline: classes.underline } }}
-            name="Email"
-            label="Email"
-          />
+              name="Time"
+              InputProps={{ classes: { underline:`${ classes.underline} ${classes.inputPadding}` } }}
+              type="time"
+            />
           <TextField
-            InputProps={{ classes: { underline: classes.underline } }}
-            name="Phone"
-            label="Phone"
-          />
-          <TextField
-            id="standard-number"
             name="Number of Guests"
             label="# of Guests"
             type="number"
@@ -142,14 +151,28 @@ function Contact() {
           />
           <TextField
             InputProps={{ classes: { underline: classes.underline } }}
+            name="Email"
+            label="Email"
+          />
+          <TextField
+            InputProps={{ classes: { underline: classes.underline } }}
+            name="Phone"
+            label="Phone"
+          />
+          </div>
+          <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+          <TextField
+            InputProps={{ classes: { underline: classes.underline } }}
             name="Message"
-            label="Type your message here..."
+            label="How did you hear about us?"
+            style={{width: '100%'}}
             multiline
             rows={5}
           />
-          <Button type="submit" className={classes.button}>
+                  <Button type="submit" className={classes.button}>
             Submit
           </Button>
+          </div>
         </form>
       </Card>
     </div>
