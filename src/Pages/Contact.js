@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     width: "40%",
     padding: theme.spacing(3),
-    border: `2px solid ${theme.palette.primary.main}`,
+    border: `4px solid ${theme.palette.primary.dark}`,
     [theme.breakpoints.down("md")]: {
       width: "60%",
     },
@@ -40,44 +40,36 @@ const useStyles = makeStyles((theme) => ({
   },
   formHeader: {
     textAlign: "center",
-    color: theme.palette.primary.main,
+    color: theme.palette.primary.dark,
   },
   contactForm: {
-    // display: "grid",
-    // rowGap: theme.spacing(1),
-    // columnGap: theme.spacing(5),
     width: "100%",
-    // gridTemplateColumns: 'repeat(2, 1fr)',
-    // [theme.breakpoints.down("sm")]: {
-    //   gridTemplateColumns: 'repeat(1, 1fr)'
-    // },
   },
   underline: {
     borderTop: "none",
-    borderBottom: `1px solid ${theme.palette.primary.main}`,
+    borderBottom: `1px solid ${theme.palette.primary.dark}`,
   },
   button: {
-    background: theme.palette.primary.main,
+    background: theme.palette.primary.dark,
     color: "#fff",
     marginTop: theme.spacing(3),
     padding: theme.spacing(2, 4),
     "&:hover": {
-      color: "#000",
-      background: theme.palette.secondary.main,
+      background: theme.palette.primary.main,
     },
   },
   inputPadding: {
-    padding: theme.spacing(1, 0)
+    padding: theme.spacing(1, 0),
   },
   form: {
     display: "grid",
     rowGap: theme.spacing(1),
     columnGap: theme.spacing(5),
-    gridTemplateColumns: 'repeat(2, 1fr)',
+    gridTemplateColumns: "repeat(2, 1fr)",
     [theme.breakpoints.down("sm")]: {
-      gridTemplateColumns: 'repeat(1, 1fr)'
+      gridTemplateColumns: "repeat(1, 1fr)",
     },
-  }
+  },
 }));
 
 function Contact() {
@@ -97,81 +89,90 @@ function Contact() {
           method="POST"
         >
           <div className={classes.form}>
-          <TextField
-            InputProps={{ classes: { underline: classes.underline } }}
-            name="Name"
-            label="Name"
-          />
-          <FormControl>
-            <InputLabel>Event Type</InputLabel>
-            <Select
-              className={classes.underline}
-              name="Event Type"
-            >
-              <MenuItem value={"Birthday"}>Birthday</MenuItem>
-              <MenuItem value={"Anniversary"}>Anniversary</MenuItem>
-              <MenuItem value={"Wedding"}>Wedding</MenuItem>
-              <MenuItem value={"School"}>School</MenuItem>
-              <MenuItem value={"Camp"}>Camp</MenuItem>
-              <MenuItem value={"Corporate"}>Corporate</MenuItem>
-              <MenuItem value={"Other"}>Other</MenuItem>
-            </Select>
-          </FormControl>
-          <FormControl>
-            <InputLabel>Location Type</InputLabel>
-            <Select
-              className={classes.underline}
-              name="Location Type"
-            >
-              <MenuItem value={"Indoor"}>Indoor</MenuItem>
-              <MenuItem value={"Outdoor"}>Outdoor</MenuItem>
-            </Select>
-          </FormControl>
+            <TextField
+              InputProps={{ classes: { underline: classes.underline } }}
+              name="Name"
+              label="Name"
+            />
+            <FormControl>
+              <InputLabel>Event Type</InputLabel>
+              <Select className={classes.underline} name="Event Type">
+                <MenuItem value={"Birthday"}>Birthday</MenuItem>
+                <MenuItem value={"Anniversary"}>Anniversary</MenuItem>
+                <MenuItem value={"Wedding"}>Wedding</MenuItem>
+                <MenuItem value={"School"}>School</MenuItem>
+                <MenuItem value={"Camp"}>Camp</MenuItem>
+                <MenuItem value={"Corporate"}>Corporate</MenuItem>
+                <MenuItem value={"Other"}>Other</MenuItem>
+              </Select>
+            </FormControl>
+            <FormControl>
+              <InputLabel>Location Type</InputLabel>
+              <Select className={classes.underline} name="Location Type">
+                <MenuItem value={"Indoor"}>Indoor</MenuItem>
+                <MenuItem value={"Outdoor"}>Outdoor</MenuItem>
+              </Select>
+            </FormControl>
             <TextField
               name="Date"
-              InputProps={{ classes: { underline:`${ classes.underline} ${classes.inputPadding}` } }}
+              InputProps={{
+                classes: {
+                  underline: `${classes.underline} ${classes.inputPadding}`,
+                },
+              }}
               type="date"
-              InputLabelProps={{shrink: false}}
+              InputLabelProps={{ shrink: false }}
             />
-          <TextField
+            <TextField
               name="Time"
-              InputProps={{ classes: { underline:`${ classes.underline} ${classes.inputPadding}` } }}
+              InputProps={{
+                classes: {
+                  underline: `${classes.underline} ${classes.inputPadding}`,
+                },
+              }}
               type="time"
             />
-          <TextField
-            name="Number of Guests"
-            label="# of Guests"
-            type="number"
-            InputProps={{ classes: { underline: classes.underline } }}
-            onChange={(e) => {
-              if (e.target.value < 0) {
-                e.target.value = 0;
-              }
-            }}
-          />
-          <TextField
-            InputProps={{ classes: { underline: classes.underline } }}
-            name="Email"
-            label="Email"
-          />
-          <TextField
-            InputProps={{ classes: { underline: classes.underline } }}
-            name="Phone"
-            label="Phone"
-          />
+            <TextField
+              name="Number of Guests"
+              label="# of Guests"
+              type="number"
+              InputProps={{ classes: { underline: classes.underline } }}
+              onChange={(e) => {
+                if (e.target.value < 0) {
+                  e.target.value = 0;
+                }
+              }}
+            />
+            <TextField
+              InputProps={{ classes: { underline: classes.underline } }}
+              name="Email"
+              label="Email"
+            />
+            <TextField
+              InputProps={{ classes: { underline: classes.underline } }}
+              name="Phone"
+              label="Phone"
+            />
           </div>
-          <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-          <TextField
-            InputProps={{ classes: { underline: classes.underline } }}
-            name="Message"
-            label="How did you hear about us?"
-            style={{width: '100%'}}
-            multiline
-            rows={5}
-          />
-                  <Button type="submit" className={classes.button}>
-            Submit
-          </Button>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <TextField
+              InputProps={{ classes: { underline: classes.underline } }}
+              name="Message"
+              label="How did you hear about us?"
+              style={{ width: "100%" }}
+              multiline
+              rows={5}
+            />
+            <Button type="submit" className={classes.button}>
+              Submit
+            </Button>
           </div>
         </form>
       </Card>
