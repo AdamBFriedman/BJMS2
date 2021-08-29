@@ -250,6 +250,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "20px",
     fontStyle: "italic",
     color: theme.palette.primary.main,
+    [theme.breakpoints.up("xl")]: {
+      fontSize: "30px",
+    },
     [theme.breakpoints.down("xs")]: {
       fontSize: "14px",
     },
