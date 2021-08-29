@@ -1,5 +1,13 @@
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Card, TextField, Button, Typography } from "@material-ui/core";
+import Card from "@material-ui/core/Card";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
 import stage from "../img/stage.jpg";
 
 const useStyles = makeStyles((theme) => ({
@@ -56,12 +64,17 @@ const useStyles = makeStyles((theme) => ({
 
 function Contact() {
   const classes = useStyles();
+  const [eventType, setEventType] = React.useState("");
+
+  const handleChange = (event) => {
+    setEventType(event.target.value);
+  };
 
   return (
     <div className={classes.contactContainer}>
       <Card className={classes.contactCard}>
         <Typography className={classes.formHeader} component="h2" variant="h3">
-          Contact
+          Book BJMS
         </Typography>
         <form
           className={classes.contactForm}
@@ -75,6 +88,25 @@ function Contact() {
             name="Name"
             label="Name"
           />
+          <FormControl className={classes.formControl}>
+            <InputLabel id="demo-simple-select-label">Event Type</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={eventType}
+              onChange={handleChange}
+              name="Event Type"
+              label="Event Type"
+            >
+              <MenuItem value={"Birthday"}>Birthday</MenuItem>
+              <MenuItem value={"Anniversary"}>Anniversary</MenuItem>
+              <MenuItem value={"Wedding"}>Wedding</MenuItem>
+              <MenuItem value={"School"}>School</MenuItem>
+              <MenuItem value={"Camp"}>Camp</MenuItem>
+              <MenuItem value={"Corporate"}>Corporate</MenuItem>
+              <MenuItem value={"Other"}>Other</MenuItem>
+            </Select>
+          </FormControl>
           <TextField
             InputProps={{ classes: { underline: classes.underline } }}
             name="Email"
