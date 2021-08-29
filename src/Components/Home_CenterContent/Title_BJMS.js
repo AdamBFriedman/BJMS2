@@ -176,7 +176,7 @@ export const TitleBJMS = () => {
           <span className={classes.animated_H1_span}>Y</span>
         </h1>
       )}
-      </>
+    </>
   );
 };
 
