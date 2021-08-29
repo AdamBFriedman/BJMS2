@@ -2,7 +2,6 @@ import { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Modal, Fade, Backdrop } from "@material-ui/core";
 import ImageSlider from "../ImageSlider/ImageSlider";
-import CustomModal from "../Modal/Modal";
 
 const useStyles = makeStyles((theme) => ({
   "@keyframes tracking-in-expand-fwd-bottom": {
@@ -80,75 +79,77 @@ const useStyles = makeStyles((theme) => ({
       height: "50% !important",
     },
   },
-  // modal: {
-  //   display: "flex",
-  //   alignItems: "center",
-  //   justifyContent: "center",
-  // },
-  // paper: {
-  //   backgroundColor: theme.palette.background.paper,
-  //   border: `3px solid ${theme.palette.grey.main}`,
-  //   boxShadow: theme.shadows[5],
-  //   padding: theme.spacing(2, 4, 3),
-  //   width: "50%",
-  //   height: "50%",
-  //   [theme.breakpoints.down("xs")]: {
-  //     width: "90%",
-  //     overflow: "auto",
-  //   },
-  // },
-  // p: {
-  //   fontFamily: "Open Sans Condensed, sans-serif",
-  //   textAlign: "left",
-  //   color: "#fff",
-  //   paddingLeft: "25px",
-  //   paddingRight: "25px",
-  //   [theme.breakpoints.up("xl")]: {
-  //     fontSize: "2.2em",
-  //     lineHeight: "2em",
-  //   },
-  //   [theme.breakpoints.down("lg")]: {
-  //     fontSize: "1.7em",
-  //   },
-  //   [theme.breakpoints.down("md")]: {
-  //     fontSize: "1.4em",
-  //   },
-  //   [theme.breakpoints.down("sm")]: {
-  //     fontSize: "1.3em",
-  //   },
-  //   [theme.breakpoints.down("xs")]: {
-  //     fontSize: "1em",
-  //   },
+  modal: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  paper: {
+    backgroundColor: theme.palette.background.paper,
+    border: `3px solid ${theme.palette.grey.main}`,
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+    width: "50%",
+    height: "50%",
+    [theme.breakpoints.down("xs")]: {
+      width: "90%",
+      overflow: "auto",
+    },
+  },
+  p: {
+    fontFamily: "Open Sans Condensed, sans-serif",
+    textAlign: "left",
+    color: "#fff",
+    paddingLeft: "25px",
+    paddingRight: "25px",
+    [theme.breakpoints.up("xl")]: {
+      fontSize: "2.2em",
+      lineHeight: "2em",
+    },
+    [theme.breakpoints.down("lg")]: {
+      fontSize: "1.7em",
+    },
+    [theme.breakpoints.down("md")]: {
+      fontSize: "1.4em",
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1.3em",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "1em",
+    },
 
-  //   "&:p:first-letter": {
-  //     float: "left",
-  //     fontSize: "92px",
-  //     lineHeight: "1",
-  //     fontWeight: "bold",
-  //     color: theme.palette.primary.main,
-  //     marginRight: ".3rem",
-  //   },
-  // },
+    "&:p:first-letter": {
+      float: "left",
+      fontSize: "92px",
+      lineHeight: "1",
+      fontWeight: "bold",
+      color: theme.palette.primary.main,
+      marginRight: ".3rem",
+    },
+  },
 }));
 export const MeetJoey = () => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
-  const handleModalToggle = () => {
-    setOpen(!open);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
   };
 
   return (
     <div className={classes.root}>
-      {`OPEN: ${open}`}
-      <div className={classes.meetJoeyWrapper} onClick={handleModalToggle}>
+      <div className={classes.meetJoeyWrapper} onClick={handleOpen}>
         <h1 className={classes.h1}>Meet Joey</h1>
         <div className={classes.imageSliderWrapper}>
           <ImageSlider />
         </div>
       </div>
-      <CustomModal open={open} onClose={handleModalToggle} />
-      {/* <Modal
+      <Modal
         className={classes.modal}
         open={open}
         onClose={handleClose}
@@ -175,7 +176,7 @@ export const MeetJoey = () => {
             </p>
           </div>
         </Fade>
-      </Modal> */}
+      </Modal>
     </div>
   );
 };
