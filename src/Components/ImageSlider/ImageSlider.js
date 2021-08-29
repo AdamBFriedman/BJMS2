@@ -83,6 +83,10 @@ const useStyles = makeStyles((theme) => ({
     width: 500,
     height: 500,
     backgroundSize: "100% 100%",
+    [theme.breakpoints.up("xl")]: {
+      width: 800,
+      height: 800
+    },
     [theme.breakpoints.down("md")]: {
       width: 350,
       height: 350,
@@ -95,6 +99,10 @@ const useStyles = makeStyles((theme) => ({
   img: {
     width: 500,
     height: 500,
+    [theme.breakpoints.up("xl")]: {
+      width: 800,
+      height: 800
+    },
     [theme.breakpoints.down("md")]: {
       width: 350,
       height: 350,
