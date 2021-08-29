@@ -1,5 +1,6 @@
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { useMediaQuery } from "@material-ui/core";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import Box from "@material-ui/core/Box";
 import SwingingFrame from "../SwingingFrame/SwingingFrame";
 import TitleBJMS from "./Title_BJMS";
 import SubtitleFES from "./Subtitle_FES";
@@ -28,11 +29,11 @@ export const Title = () => {
   const isDesktopOrLarger = useMediaQuery(theme.breakpoints.up("lg"));
 
   return (
-    <div className={classes.centerContent}>
+    <Box className={classes.centerContent}>
       <TitleBJMS />
       <SubtitleFES />
       {isDesktopOrLarger ? null : <SwingingFrame />}
-    </div>
+    </Box>
   );
 };
 
