@@ -101,6 +101,32 @@ const socialMedia = [
   },
 ];
 
+const chooseSocialMedia = (variant, name, className) => {
+  if (variant === "css") {
+    return name === "facebook"
+      ? "#4267b2"
+      : name === "youtube"
+      ? "#ED3833"
+      : name === "linkedin"
+      ? "#0077b5"
+      : name === "instagram"
+      ? "radial-gradient(circle at 30% 100%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)"
+      : "radial-gradient(circle at 30% 100%, #00f2ea, #ff0050)";
+  } else {
+    return name === "facebook" ? (
+      <FaFacebook className={className} />
+    ) : name === "youtube" ? (
+      <FaYoutube className={className} />
+    ) : name === "linkedin" ? (
+      <FaLinkedin className={className} />
+    ) : name === "instagram" ? (
+      <FaInstagram className={className} />
+    ) : (
+      <FontAwesomeIcon className={className} icon={faTiktok} />
+    );
+  }
+};
+
 export const SocialMedia = () => {
   const classes = useStyles();
 
@@ -111,30 +137,11 @@ export const SocialMedia = () => {
           key={i}
           className={classes.listItem}
           style={{
-            background:
-              it.name === "facebook"
-                ? "#4267b2"
-                : it.name === "youtube"
-                ? "#ED3833"
-                : it.name === "linkedin"
-                ? "#0077b5"
-                : it.name === "instagram"
-                ? "radial-gradient(circle at 30% 100%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)"
-                : "radial-gradient(circle at 30% 100%, #00f2ea, #ff0050)",
+            background: chooseSocialMedia("css", it.name),
           }}
         >
           <a href={it.href} target="_blank" rel="noreferrer">
-            {it.name === "facebook" ? (
-              <FaFacebook className={classes.icon} />
-            ) : it.name === "youtube" ? (
-              <FaYoutube className={classes.icon} />
-            ) : it.name === "linkedin" ? (
-              <FaLinkedin className={classes.icon} />
-            ) : it.name === "instagram" ? (
-              <FaInstagram className={classes.icon} />
-            ) : (
-              <FontAwesomeIcon className={classes.icon} icon={faTiktok} />
-            )}
+            {chooseSocialMedia("icon", it.name, classes.icon)}
           </a>
         </li>
       ))}
