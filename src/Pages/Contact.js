@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import TextField from "@material-ui/core/TextField";
@@ -64,17 +64,6 @@ const useStyles = makeStyles((theme) => ({
 
 function Contact() {
   const classes = useStyles();
-  const [eventType, setEventType] = React.useState("");
-  const [locationType, setLocationType] = React.useState("");
-
-
-  const handleEventTypeChange = (event) => {
-    setEventType(event.target.value);
-  };
-
-  const handleLocationTypeChange = (event) => {
-    setLocationType(event.target.value);
-  };
 
   return (
     <div className={classes.contactContainer}>
@@ -97,8 +86,7 @@ function Contact() {
           <FormControl>
             <InputLabel>Event Type</InputLabel>
             <Select
-              value={eventType}
-              onChange={handleEventTypeChange}
+              className={classes.underline}
               name="Event Type"
               label="Event Type"
             >
@@ -114,14 +102,21 @@ function Contact() {
           <FormControl>
             <InputLabel>Location Type</InputLabel>
             <Select
-              value={locationType}
-              onChange={handleLocationTypeChange}
+              className={classes.underline}
               name="Location Type"
               label="Location Type"
             >
               <MenuItem value={"Indoor"}>Indoor</MenuItem>
               <MenuItem value={"Outdoor"}>Outdoor</MenuItem>
             </Select>
+          </FormControl>
+          <FormControl>
+            <TextField
+              name="Date"
+              label="Date"
+              InputProps={{ classes: { underline: classes.underline } }}
+              type="date"
+            />
           </FormControl>
           <TextField
             InputProps={{ classes: { underline: classes.underline } }}
