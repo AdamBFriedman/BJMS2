@@ -58,11 +58,11 @@ const useStyles = makeStyles((theme) => ({
   facebook: {
     background: "#4267b2",
   },
-  linkedin: {
-    background: "#0077b5",
-  },
   youtube: {
     background: "#ED3833",
+  },
+  linkedin: {
+    background: "#0077b5",
   },
   instagram: {
     background:
@@ -72,56 +72,72 @@ const useStyles = makeStyles((theme) => ({
     background: "radial-gradient(circle at 30% 100%, #00f2ea, #ff0050)",
   },
 }));
+
+const socialMedia = [
+  {
+    name: "facebook",
+    href: "https://www.facebook.com/joeydp8trow/",
+    className: `classes.facebook`,
+  },
+  {
+    name: "youtube",
+    href: "https://www.youtube.com/channel/UC4ePL-afZ7oPyiW075k0AJA",
+    className: `classes.youtube`,
+  },
+  {
+    name: "linkedin",
+    href: "https://www.linkedin.com/in/joseph-dipietro-aa398b171/",
+    className: `classes.linkedin`,
+  },
+  {
+    name: "instagram",
+    href: "https://www.instagram.com/bigjoeymagicshowy/",
+    className: `classes.instagram`,
+  },
+  {
+    name: "tiktok",
+    href: "https://www.tiktok.com/@bigjoeymagicshow?lang=en",
+    className: `classes.tiktok`,
+  },
+];
+
 export const SocialMedia = () => {
   const classes = useStyles();
 
   return (
     <ul className={classes.list}>
-      <li className={`${classes.listItem} ${classes.facebook}`}>
-        <a
-          href="https://www.facebook.com/joeydp8trow/"
-          target="_blank"
-          rel="noreferrer"
+      {socialMedia.map((it, i) => (
+        <li
+          key={i}
+          className={classes.listItem}
+          style={{
+            background:
+              it.name === "facebook"
+                ? "#4267b2"
+                : it.name === "youtube"
+                ? "#ED3833"
+                : it.name === "linkedin"
+                ? "#0077b5"
+                : it.name === "instagram"
+                ? "radial-gradient(circle at 30% 100%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)"
+                : "radial-gradient(circle at 30% 100%, #00f2ea, #ff0050)",
+          }}
         >
-          <FaFacebook className={classes.icon} />{" "}
-        </a>
-      </li>
-      <li className={`${classes.listItem} ${classes.youtube}`}>
-        <a
-          href="https://www.youtube.com/channel/UC4ePL-afZ7oPyiW075k0AJA"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FaYoutube className={classes.icon} />{" "}
-        </a>
-      </li>
-      <li className={`${classes.listItem} ${classes.linkedin}`}>
-        <a
-          href="https://www.linkedin.com/in/joseph-dipietro-aa398b171/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FaLinkedin className={classes.icon} />
-        </a>
-      </li>
-      <li className={`${classes.listItem} ${classes.instagram}`}>
-        <a
-          href="https://www.instagram.com/bigjoeymagicshowy/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FaInstagram className={classes.icon} />{" "}
-        </a>
-      </li>
-      <li className={`${classes.listItem} ${classes.tiktok}`}>
-        <a
-          href="https://www.tiktok.com/@bigjoeymagicshow?lang=en"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FontAwesomeIcon className={classes.icon} icon={faTiktok} />
-        </a>
-      </li>
+          <a href={it.href} target="_blank" rel="noreferrer">
+            {it.name === "facebook" ? (
+              <FaFacebook className={classes.icon} />
+            ) : it.name === "youtube" ? (
+              <FaYoutube className={classes.icon} />
+            ) : it.name === "linkedin" ? (
+              <FaLinkedin className={classes.icon} />
+            ) : it.name === "instagram" ? (
+              <FaInstagram className={classes.icon} />
+            ) : (
+              <FontAwesomeIcon className={classes.icon} icon={faTiktok} />
+            )}
+          </a>
+        </li>
+      ))}
     </ul>
   );
 };

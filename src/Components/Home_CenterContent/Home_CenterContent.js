@@ -190,7 +190,7 @@ export const Title = () => {
             <span className={classes.animated_H1_span}>E</span>
             <span className={classes.animated_H1_span}>Y</span>
           </h1>
-          <h2 classname={classes.animated_H1}>
+          <h2 className={classes.animated_H1}>
             <span className={classes.animated_H1_span}>M</span>
             <span className={classes.animated_H1_span}>A</span>
             <span className={classes.animated_H1_span}>G</span>
