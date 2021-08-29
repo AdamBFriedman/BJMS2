@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   meetJoeyWrapper: {
     background: `linear-gradient(to bottom left, ${theme.palette.primary.dark}, ${theme.palette.grey.main})`,
     boxShadow: "0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24)",
-    border: `1.5px solid ${theme.palette.secondary.light}`,
+    border: `3px solid ${theme.palette.secondary.light}`,
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
