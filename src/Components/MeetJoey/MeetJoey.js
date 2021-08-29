@@ -144,9 +144,7 @@ export const MeetJoey = () => {
     <div className={classes.root}>
       <div className={classes.meetJoeyWrapper} onClick={handleOpen}>
         <h1 className={classes.h1}>Meet Joey</h1>
-        <div
-          className={classes.imageSliderWrapper}
-        >
+        <div className={classes.imageSliderWrapper}>
           <ImageSlider />
         </div>
       </div>
