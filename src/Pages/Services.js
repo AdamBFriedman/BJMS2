@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     background: `linear-gradient(to bottom left, ${theme.palette.grey.main}, ${theme.palette.secondary.main})`,
     cursor: "pointer",
-    border: `3px solid ${theme.palette.secondary.light}`,
+    border: `3px solid ${theme.palette.primary.main}`,
     width: "30%",
     height: "50%",
     [theme.breakpoints.down("xs")]: {
@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   title: {
-    color: theme.palette.secondary.light,
+    color: theme.palette.primary.main,
     display: "flex",
     alignItems: "flex-end",
     fontSize: "4em",
