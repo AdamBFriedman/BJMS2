@@ -30,7 +30,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     width: "40%",
     padding: theme.spacing(3),
-    border: `4px solid ${theme.palette.primary.dark}`,
+    border: `4px solid ${theme.palette.secondary.main}`,
+    background: theme.palette.primary.main,
     [theme.breakpoints.down("md")]: {
       width: "60%",
     },
@@ -40,22 +41,25 @@ const useStyles = makeStyles((theme) => ({
   },
   formHeader: {
     textAlign: "center",
-    color: theme.palette.primary.dark,
+    color: theme.palette.secondary.main,
   },
   contactForm: {
     width: "100%",
   },
   underline: {
     borderTop: "none",
-    borderBottom: `1px solid ${theme.palette.primary.dark}`,
+    borderBottom: `1px solid ${theme.palette.secondary.main}`,
   },
   button: {
-    background: theme.palette.primary.dark,
-    color: "#fff",
+    background: theme.palette.secondary.main,
+    color: theme.palette.primary.main,
+    fontWeight: 900,
     marginTop: theme.spacing(3),
     padding: theme.spacing(2, 4),
     "&:hover": {
       background: theme.palette.primary.main,
+      color: theme.palette.secondary.main,
+      border: `1px solid ${theme.palette.secondary.main}`,
     },
   },
   inputPadding: {
