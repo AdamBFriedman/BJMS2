@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     width: "40%",
     padding: theme.spacing(3),
     border: `4px solid ${theme.palette.secondary.main}`,
-    background: theme.palette.primary.main,
+    background: `linear-gradient(to left, ${theme.palette.grey.main}, ${theme.palette.primary.main}, ${theme.palette.grey.main})`,
     [theme.breakpoints.down("md")]: {
       width: "60%",
     },
